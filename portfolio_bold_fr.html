@@ -1,0 +1,1728 @@
+<!DOCTYPE html>
+<html lang="fr" class="no-js">
+<head>
+<meta charset="UTF-8">
+<title>Joseph Gad — Chef d’équipe TI / Spécialiste des systèmes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root{
+    --red:#c0392b;
+    --red-dark:#8f2a1e;
+    --black:#1a1a1a;
+    --black-soft:#242424;
+    --white:#ffffff;
+    --offwhite:#f4f2ee;
+    --gray:#6b6b6b;
+    --gray-light:#9a9a9a;
+    --border:#2c2c2c;
+    --border-light:#ddd8d0;
+    --serif-display: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+
+    /* theme-aware tokens (light = default brand look) */
+    --ink:var(--black);
+    --ink-soft:var(--gray);
+    --surface-base:var(--white);
+    --surface-alt:var(--offwhite);
+    --card-bg:var(--white);
+    --border-soft:var(--border-light);
+    --body-bg:var(--white);
+    --body-ink:var(--black);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    padding:0;
+    font-family:var(--sans);
+    color:var(--body-ink);
+    background:var(--body-bg);
+    line-height:1.55;
+    overflow-x:hidden;
+    transition:background .25s ease, color .25s ease;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal{transition:none !important;}
+    .scroll-cta .arrow{animation:none !important;}
+    html{scroll-behavior:auto;}
+  }
+  a{color:inherit;}
+  ul{margin:0;padding:0;}
+  .container{max-width:1200px;margin:0 auto;padding:0 32px;}
+  @media (max-width:600px){ .container{padding:0 20px;} }
+
+  /* ============ NAV ============ */
+  .site-nav{
+    position:sticky; top:0; z-index:1000;
+    background:var(--black);
+    border-bottom:3px solid var(--red);
+  }
+  .nav-inner{
+    max-width:1200px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; justify-content:space-between;
+    height:66px;
+  }
+  .nav-mark{
+    display:flex; align-items:center; gap:8px;
+    font-weight:900; letter-spacing:1px; color:var(--white);
+    font-size:1.05rem; text-decoration:none;
+  }
+  .nav-mark .sq{
+    width:30px;height:30px;background:var(--red);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--white); font-size:0.85rem; font-weight:900;
+    transform:rotate(-2deg);
+  }
+  .nav-links{
+    display:flex; gap:2px; list-style:none; margin:0; padding:0;
+  }
+  .nav-links a{
+    display:block;
+    color:var(--white);
+    text-decoration:none;
+    font-size:0.78rem;
+    font-weight:700;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    padding:10px 13px;
+    border-bottom:3px solid transparent;
+    transition:border-color .2s ease, color .2s ease, background .2s ease;
+  }
+  .nav-links a:hover{color:var(--red);}
+  .nav-links a.active{border-color:var(--red); color:var(--red);}
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:34px;height:34px;
+    background:none;border:none;cursor:pointer;
+    padding:0;
+  }
+  .hamburger span{
+    display:block; height:3px; width:100%;
+    background:var(--white); transition:transform .25s ease, opacity .25s ease;
+  }
+  .site-nav.open .hamburger span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .site-nav.open .hamburger span:nth-child(2){opacity:0;}
+  .site-nav.open .hamburger span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+
+  @media (max-width:900px){
+    .nav-links{
+      position:fixed; top:66px; left:0; right:0; bottom:0;
+      background:var(--black);
+      flex-direction:column;
+      gap:0;
+      padding:10px 0 40px;
+      transform:translateX(100%);
+      transition:transform .3s ease;
+      overflow-y:auto;
+    }
+    .site-nav.open .nav-links{transform:translateX(0);}
+    .nav-links a{
+      padding:18px 32px;
+      font-size:1rem;
+      border-bottom:1px solid #333;
+      border-left:4px solid transparent;
+    }
+    .nav-links a.active{border-left-color:var(--red); border-bottom-color:#333; color:var(--red);}
+    .hamburger{display:flex;}
+  }
+
+  /* ============ REVEAL ANIM ============ */
+  /* Content is visible by default. Only hide-then-fade-in when JS has
+     confirmed it's running (html.js) -- never gate visibility on JS alone. */
+  .reveal{
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  html.js .reveal{opacity:0; transform:translateY(28px);}
+  html.js .reveal.in-view{opacity:1; transform:translateY(0);}
+  html.no-js .reveal{opacity:1 !important; transform:none !important;}
+  .reveal-stagger.in-view > *{}
+  .reveal.delay-1{transition-delay:.08s;}
+  .reveal.delay-2{transition-delay:.16s;}
+  .reveal.delay-3{transition-delay:.24s;}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    background:var(--black);
+    color:var(--white);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    overflow:hidden;
+    padding:120px 0 60px;
+  }
+  .hero-watermark{
+    position:absolute;
+    right:-4vw; top:50%; transform:translateY(-50%);
+    font-family:var(--serif-display);
+    font-size:min(46vw,620px);
+    font-weight:900;
+    color:rgba(255,255,255,0.035);
+    line-height:1;
+    z-index:0;
+    user-select:none;
+    pointer-events:none;
+    white-space:nowrap;
+  }
+  .hero-inner{position:relative; z-index:1;}
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.4fr 0.9fr;
+    gap:60px;
+    align-items:center;
+  }
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr; gap:40px;}
+    .hero-photo{justify-self:center;}
+  }
+  .hero-photo{
+    display:flex; flex-direction:column; align-items:center; gap:16px;
+  }
+  .avatar-placeholder{
+    position:relative;
+    width:220px; height:220px;
+    border-radius:50%;
+    background:var(--black-soft);
+    border:3px solid var(--red);
+    outline:2px solid rgba(255,255,255,0.15);
+    outline-offset:6px;
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+    overflow:hidden;
+  }
+  @media (max-width:480px){
+    .avatar-placeholder{width:150px;height:150px;}
+  }
+  .avatar-photo{
+    width:100%; height:100%;
+    object-fit:cover;
+  }
+  .hero-actions{
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+    margin-top:36px;
+  }
+  .btn-solid{
+    display:inline-block;
+    background:var(--red);
+    color:var(--white);
+    border:none;
+    padding:15px 26px;
+    font-size:0.78rem;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    text-decoration:none;
+    cursor:pointer;
+    font-family:inherit;
+    transition:background .2s ease, transform .2s ease;
+  }
+  .btn-solid:hover{background:var(--red-dark);}
+  .btn-caption{
+    font-size:0.75rem; color:#999; font-style:italic;
+  }
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    color:var(--red); font-weight:800; letter-spacing:4px;
+    font-size:0.8rem; text-transform:uppercase; margin-bottom:20px;
+  }
+  .hero-eyebrow::before{
+    content:''; width:36px; height:3px; background:var(--red); display:inline-block;
+  }
+  .hero h1{
+    font-family:var(--serif-display);
+    font-weight:900;
+    font-size:clamp(3rem, 11vw, 8.5rem);
+    line-height:0.92;
+    letter-spacing:-2px;
+    margin:0 0 10px;
+    text-transform:uppercase;
+  }
+  .hero h1 .last{color:var(--red);}
+  .hero .role{
+    font-size:clamp(1rem,2.4vw,1.6rem);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--white);
+    margin:6px 0 22px;
+    border-left:5px solid var(--red);
+    padding-left:16px;
+    display:inline-block;
+  }
+  .hero .tagline{
+    max-width:640px;
+    font-size:1.15rem;
+    color:#cfcfcf;
+    margin:0 0 46px;
+  }
+  .quick-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    max-width:900px;
+  }
+  .quick-stats .stat{
+    padding:22px 20px 0 0;
+  }
+  .quick-stats .stat .num{
+    font-family:var(--serif-display);
+    font-weight:900;
+    font-size:clamp(1.8rem,4vw,2.8rem);
+    color:var(--red);
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .quick-stats .stat .label{
+    font-size:0.7rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#b5b5b5;
+    font-weight:600;
+  }
+  @media (max-width:700px){
+    .quick-stats{grid-template-columns:repeat(2,1fr); row-gap:26px;}
+  }
+  .scroll-cta{
+    position:absolute;
+    left:50%; bottom:28px; transform:translateX(-50%);
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    color:#999; text-decoration:none;
+    font-size:0.68rem; letter-spacing:2px; text-transform:uppercase;
+    z-index:1;
+  }
+  .scroll-cta .arrow{
+    width:14px;height:14px;
+    border-right:2px solid var(--red);
+    border-bottom:2px solid var(--red);
+    transform:rotate(45deg);
+    animation:bounce 1.8s infinite;
+  }
+  @keyframes bounce{
+    0%,100%{transform:rotate(45deg) translate(0,0);}
+    50%{transform:rotate(45deg) translate(6px,6px);}
+  }
+
+  /* ============ SECTION SCAFFOLDING ============ */
+  .section{padding:110px 0;}
+  .section.on-black{background:var(--black); color:var(--white);}
+  .section.on-offwhite{background:var(--surface-alt); color:var(--ink);}
+  .section.on-white{background:var(--surface-base); color:var(--ink);}
+  @media (max-width:700px){ .section{padding:70px 0;} }
+
+  .section-head{
+    display:flex;
+    align-items:flex-end;
+    gap:22px;
+    margin-bottom:56px;
+    flex-wrap:wrap;
+  }
+  .section-head .idx{
+    font-family:var(--serif-display);
+    font-weight:900;
+    font-size:clamp(2.4rem,6vw,4.2rem);
+    color:var(--red);
+    line-height:0.8;
+  }
+  .section-head h2{
+    font-family:var(--serif-display);
+    font-weight:900;
+    font-size:clamp(2.2rem,6vw,4rem);
+    text-transform:uppercase;
+    letter-spacing:-1px;
+    margin:0;
+    line-height:0.95;
+    position:relative;
+    padding-bottom:14px;
+  }
+  .section-head h2::after{
+    content:'';
+    position:absolute; left:0; bottom:0;
+    width:90px; height:6px; background:var(--red);
+  }
+  .section.on-black .section-head h2::after{background:var(--red);}
+  .section-sub{
+    max-width:640px;
+    color:var(--ink-soft);
+    font-size:1rem;
+    margin:0 0 56px;
+  }
+  .section.on-black .section-sub{color:#b5b5b5;}
+
+  /* ============ ABOUT ============ */
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:70px;
+    align-items:start;
+  }
+  @media (max-width:860px){ .about-grid{grid-template-columns:1fr; gap:40px;} }
+  .draft-flag{
+    display:inline-block;
+    font-style:italic;
+    font-size:0.78rem;
+    color:#7a5b00;
+    background:#fff3cd;
+    padding:3px 10px;
+    border-radius:2px;
+    margin-bottom:18px;
+    font-weight:600;
+    letter-spacing:.2px;
+  }
+  .about-bio{
+    font-size:1.28rem;
+    line-height:1.65;
+    color:var(--ink);
+    font-weight:500;
+  }
+  .about-bio strong{color:var(--red);}
+  .about-side{
+    border-left:4px solid var(--ink);
+    padding-left:28px;
+  }
+  .about-side h3{
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin:0 0 18px;
+    color:var(--red);
+    font-weight:800;
+  }
+  .lang-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:0.95rem;font-weight:600;}
+  .dots span{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--border-light);margin-left:4px;}
+  .dots span.filled{background:var(--red);}
+  .about-side-block{margin-top:32px;}
+
+  /* ============ EXPERIENCE / TIMELINE ============ */
+  .timeline{position:relative; padding-left:150px;}
+  .timeline-item{position:relative; margin-bottom:64px;}
+  .timeline-item:last-child{margin-bottom:0;}
+  .timeline-marker{
+    position:absolute;
+    left:-150px; top:4px; width:150px;
+    display:flex; align-items:center; justify-content:flex-end; gap:14px;
+    padding-right:9px;
+  }
+  .timeline-dot{
+    position:relative;
+    width:16px; height:16px; border-radius:50%;
+    background:var(--red);
+    box-shadow:0 0 0 4px var(--surface-alt), 0 0 0 6px var(--ink);
+    flex-shrink:0;
+    z-index:1;
+  }
+  .timeline-date{
+    font-size:0.75rem;
+    font-weight:800;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    white-space:nowrap;
+  }
+  @media (max-width:700px){
+    .timeline{padding-left:34px;}
+    .timeline-marker{left:-34px; width:34px; justify-content:center; padding-right:0;}
+    .timeline-date{display:none;}
+  }
+  .job{margin-bottom:0;}
+  /* .job is a <details> element -- job-head/job-body are always in the DOM
+     (readable/printable with JS off); only the disclosure triangle behavior
+     needs JS-free support, which <details> provides natively. */
+  summary.job-head{
+    display:flex;
+    cursor:pointer;
+    list-style:none;
+  }
+  summary.job-head::-webkit-details-marker{display:none;}
+  summary.job-head::marker{content:'';}
+  .job-head{
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:10px;
+    border-bottom:3px solid var(--ink);
+    padding-bottom:16px;
+    margin-bottom:18px;
+  }
+  summary.job-head:hover .job-title{color:var(--red);}
+  .job-head-side{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    flex-shrink:0;
+  }
+  .job-chevron{
+    color:var(--red);
+    font-size:1.6rem;
+    font-weight:900;
+    line-height:1;
+    flex-shrink:0;
+    transition:transform .25s ease;
+  }
+  details[open] > summary .job-chevron{transform:rotate(45deg);}
+  .job-body{
+    animation:job-body-in .25s ease;
+  }
+  @keyframes job-body-in{from{opacity:0;} to{opacity:1;}}
+  .job-title{
+    font-family:var(--serif-display);
+    font-weight:900;
+    font-size:clamp(1.4rem,3vw,2.1rem);
+    text-transform:uppercase;
+    line-height:1.05;
+  }
+  .job-company{
+    color:var(--red);
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:0.9rem;
+    letter-spacing:1px;
+    display:block;
+    margin-top:4px;
+  }
+  .job-dates{
+    color:var(--ink-soft);
+    font-weight:700;
+    font-size:0.9rem;
+    letter-spacing:1px;
+    white-space:nowrap;
+  }
+  .job-core ul{padding-left:22px; margin:0 0 8px;}
+  .job-core li{margin-bottom:6px; font-size:1rem;}
+  .job-core p{margin:0 0 10px; font-size:1.05rem; line-height:1.6; max-width:760px;}
+
+  .projects-label{
+    font-size:0.75rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--ink);
+    margin:26px 0 14px;
+    font-weight:800;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .projects-label::after{content:''; flex:1; height:1px; background:var(--border-soft);}
+
+  .project{
+    border:2px solid var(--ink);
+    margin-bottom:12px;
+    overflow:hidden;
+    background:var(--card-bg);
+  }
+  .project-toggle{
+    width:100%;
+    background:var(--card-bg);
+    border:none;
+    text-align:left;
+    padding:18px 20px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:1rem;
+    font-weight:800;
+    color:var(--ink);
+    font-family:inherit;
+    gap:14px;
+    transition:background .2s ease, color .2s ease;
+  }
+  .project-toggle:hover{background:var(--ink); color:var(--card-bg);}
+  .project-toggle:hover .sub{color:var(--card-bg); opacity:.75;}
+  .project-toggle .main-line{display:block;}
+  .project-toggle .sub{
+    display:block;
+    font-weight:500;
+    font-size:0.84rem;
+    color:var(--ink-soft);
+    margin-top:4px;
+    transition:color .2s ease;
+  }
+  .project-toggle .chevron{
+    transition:transform .25s ease;
+    color:var(--red);
+    font-size:1.3rem;
+    font-weight:900;
+    flex-shrink:0;
+    line-height:1;
+  }
+  .project.open .chevron{transform:rotate(45deg);}
+  /* Content is visible by default; only collapsed once JS confirms it's
+     running (html.js) -- the accordion must never hide real content behind
+     a toggle that depends on JS actually executing. */
+  .project-body{
+    overflow:hidden;
+    transition:max-height .3s ease;
+    background:var(--surface-alt);
+    border-top:2px solid var(--ink);
+  }
+  html.js .project-body{max-height:0; border-top:0 solid var(--ink);}
+  html.js .project.open .project-body{max-height:1400px; border-top:2px solid var(--ink);}
+  .project-body-inner{padding:22px 24px 26px;}
+  .project-body-inner h4{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:1.5px;
+    color:var(--red);
+    margin:16px 0 6px;
+    font-weight:800;
+  }
+  .project-body-inner h4:first-child{margin-top:0;}
+  .project-body-inner ul{margin:0 0 4px;padding-left:20px;}
+  .project-body-inner li{font-size:0.94rem;margin-bottom:5px;line-height:1.5;}
+  .placeholder{
+    background:#fff3cd;
+    color:#7a5b00;
+    padding:0 4px;
+    border-radius:2px;
+    font-style:italic;
+    font-weight:600;
+  }
+
+  /* Key Initiatives (Experience section only) -- heading-style rows instead
+     of boxed buttons; title reads red while collapsed, black once expanded. */
+  #experience .project{
+    border:none;
+    margin-bottom:0;
+    background:transparent;
+  }
+  #experience .project-toggle{
+    background:transparent;
+    padding:16px 4px;
+    justify-content:flex-start;
+  }
+  #experience .project-toggle:hover{background:transparent;}
+  #experience .project-toggle .main-line{
+    font-family:var(--serif-display);
+    font-weight:800;
+    font-size:1.1rem;
+    color:var(--red);
+    transition:color .2s ease;
+  }
+  #experience .project-toggle:hover .main-line{color:var(--red-dark);}
+  #experience .project.open .project-toggle .main-line{color:var(--ink);}
+  #experience .project-toggle .sub{color:var(--ink-soft);}
+  #experience .project-toggle:hover .sub{color:var(--ink-soft); opacity:1;}
+  #experience .project-body{border-top:none; background:transparent;}
+  #experience .project-body-inner{padding:0 4px 24px;}
+  html.js #experience .project.open .project-body{border-top:none;}
+
+  /* Projects | Home Lab -- same floating, boxless heading-style rows as
+     the Experience section's Key Initiatives. */
+  #projects .project{
+    border:none;
+    margin-bottom:0;
+    background:transparent;
+  }
+  #projects .project-toggle{
+    background:transparent;
+    padding:16px 4px;
+    justify-content:flex-start;
+  }
+  #projects .project-toggle:hover{background:transparent;}
+  #projects .project-toggle .main-line{
+    font-family:var(--serif-display);
+    font-weight:800;
+    font-size:1.1rem;
+    color:var(--red);
+    transition:color .2s ease;
+  }
+  #projects .project-toggle:hover .main-line{color:var(--red-dark);}
+  #projects .project.open .project-toggle .main-line{color:var(--ink);}
+  #projects .project-toggle .sub{color:var(--ink-soft);}
+  #projects .project-toggle:hover .sub{color:var(--ink-soft); opacity:1;}
+  #projects .project-body{border-top:none; background:transparent;}
+  #projects .project-body-inner{padding:0 4px 24px;}
+  html.js #projects .project.open .project-body{border-top:none;}
+
+  .accordion-controls{
+    display:flex; gap:10px; margin-bottom:40px; flex-wrap:wrap;
+  }
+  .btn-outline{
+    background:none;
+    border:2px solid var(--ink);
+    color:var(--ink);
+    padding:9px 18px;
+    font-size:0.75rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    cursor:pointer;
+    font-weight:800;
+    font-family:inherit;
+    transition:background .2s ease, color .2s ease;
+  }
+  .btn-outline:hover{background:var(--ink); color:var(--card-bg);}
+  .section.on-black .btn-outline{border-color:var(--white); color:var(--white);}
+  .section.on-black .btn-outline:hover{background:var(--white); color:var(--black);}
+
+  /* earlier roles */
+  .earlier-wrap{margin-top:60px;}
+  .earlier-label{
+    font-size:0.75rem; text-transform:uppercase; letter-spacing:2px;
+    font-weight:800; color:var(--ink-soft); margin-bottom:20px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .earlier-label::after{content:''; flex:1; height:1px; background:var(--border-soft);}
+  .earlier-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px 40px; align-items:start;}
+  @media (max-width:700px){ .earlier-grid{grid-template-columns:1fr;} }
+  .simple-job{border-left:3px solid var(--red); padding-left:16px;}
+  .simple-job .job-head{border-bottom:none; padding-bottom:4px; margin-bottom:8px; align-items:center;}
+  .simple-job .job-title{font-size:1.05rem;}
+  .simple-job .job-chevron{font-size:1.2rem;}
+  .simple-job-body{animation:job-body-in .25s ease;}
+  .simple-job ul{padding-left:18px;}
+  .simple-job li{font-size:0.88rem; margin-bottom:4px; color:var(--ink-soft);}
+
+  /* ============ PROJECTS (HOME LAB) ============ */
+  .lab-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
+  @media (max-width:800px){ .lab-grid{grid-template-columns:1fr;} }
+
+  /* ============ SKILLS ============ */
+  .skills-block{margin-bottom:56px;}
+  .skills-block:last-child{margin-bottom:0;}
+  .skills-block h3{
+    font-family:var(--serif-display);
+    font-size:1.3rem;
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    margin:0 0 20px;
+    font-weight:900;
+  }
+  .skill-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .skill-list.cols-2{column-count:2; column-gap:16px;}
+  .skill-list li{
+    display:flex;
+    align-items:baseline;
+    gap:9px;
+    font-weight:700;
+    font-size:0.88rem;
+    color:var(--ink);
+    break-inside:avoid-column;
+    margin-bottom:11px;
+    line-height:1.3;
+  }
+  .skill-list .skill-dot{
+    width:7px; height:7px; min-width:7px;
+    border-radius:50%;
+    background:var(--red);
+    transform:translateY(-2px);
+  }
+  .skill-list.accent li{color:var(--red);}
+
+
+  /* ============ CERTIFICATIONS ============ */
+  .cert-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:2px;
+    background:#3a3a3a;
+    border:2px solid #3a3a3a;
+  }
+  .cert{
+    background:var(--black);
+    padding:30px 24px;
+    position:relative;
+  }
+  .cert-index{
+    font-family:var(--serif-display);
+    font-size:2.6rem;
+    font-weight:900;
+    color:#333;
+    line-height:1;
+    margin-bottom:16px;
+  }
+  .cert-name{font-size:1rem;font-weight:900;color:var(--white); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;}
+  .cert-issuer{color:var(--red);font-size:0.85rem;font-weight:700; margin-bottom:6px;}
+  .cert-years{color:#999;font-size:0.8rem; letter-spacing:0.5px;}
+
+  /* ============ CONTACT / FOOTER ============ */
+  .contact-section{
+    background:var(--surface-alt);
+    color:var(--ink);
+    padding:110px 0 50px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-section .hero-watermark{opacity:1; color:rgba(0,0,0,0.04);}
+  .contact-head{
+    font-family:var(--serif-display);
+    font-weight:900;
+    font-size:clamp(2.6rem,8vw,6rem);
+    text-transform:uppercase;
+    line-height:0.95;
+    letter-spacing:-1px;
+    margin:0 0 20px;
+    position:relative; z-index:1;
+  }
+  .contact-head .dot{color:var(--red);}
+  .contact-lead{
+    max-width:560px;
+    color:var(--ink-soft);
+    font-size:1.1rem;
+    margin-bottom:50px;
+    position:relative; z-index:1;
+  }
+  .contact-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    margin-bottom:70px;
+    position:relative; z-index:1;
+  }
+  .contact-link{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    border:2px solid var(--ink);
+    padding:16px 22px;
+    text-decoration:none;
+    color:var(--ink);
+    font-weight:700;
+    font-size:0.95rem;
+    transition:border-color .2s ease, background .2s ease, color .2s ease;
+  }
+  .contact-link:hover{border-color:var(--red); background:var(--red); color:var(--white);}
+  .contact-link svg{flex-shrink:0;}
+  .footer-bottom{
+    border-top:1px solid var(--border-soft);
+    padding-top:24px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:14px;
+    font-size:0.75rem;
+    color:var(--ink-soft);
+    position:relative; z-index:1;
+  }
+  .footer-note{
+    max-width:800px;
+  }
+
+
+  /* ============ PRINT ============ */
+  @media print{
+    :root{
+      --ink:#000; --ink-soft:#333; --surface-base:#fff; --surface-alt:#fff;
+      --card-bg:#fff; --border-soft:#ccc; --body-bg:#fff; --body-ink:#000;
+    }
+    .site-nav, .hamburger, .scroll-cta, .hero-watermark, .accordion-controls, .contact-section .hero-watermark,
+    .hero-photo, .hero-actions, .btn-solid, .resume-download{display:none !important;}
+    .hero-grid{display:block !important;}
+    *{animation:none !important; transition:none !important;}
+    body{background:#fff !important; color:#000 !important;}
+    .reveal{opacity:1 !important; transform:none !important;}
+    .timeline{padding-left:34px;}
+    .timeline-marker{left:-34px; width:34px; justify-content:center; padding-right:0;}
+    .timeline-dot{background:#c0392b !important; box-shadow:none !important; border:2px solid #000 !important;}
+    .timeline-date{display:none !important;}
+    .hero .role{color:#000 !important;}
+    .hero .tagline{color:#333 !important;}
+    .ui-hint{display:none !important;}
+    .section, .hero, .contact-section{
+      background:#fff !important;
+      color:#000 !important;
+      padding:24px 0 !important;
+      min-height:0 !important;
+    }
+    .hero{min-height:0 !important; padding:10px 0 !important;}
+    .quick-stats .stat .label, .section-sub{color:#333 !important;}
+    .project-body{max-height:none !important; overflow:visible !important; background:#fff !important;}
+    .project{border-color:#000 !important; page-break-inside:avoid;}
+    .project-toggle{background:#fff !important; color:#000 !important; cursor:default;}
+    .project-toggle:hover{background:#fff !important; color:#000 !important;}
+    .project .chevron{display:none;}
+    .project-toggle .sub{color:#333 !important;}
+    #experience .project-toggle .main-line, #projects .project-toggle .main-line{color:#000 !important;}
+    details.job > *, details.simple-job > *{display:block !important;}
+    summary.job-head{cursor:default;}
+    .job-chevron{display:none;}
+    .cert-grid{background:#fff !important; border-color:#000 !important;}
+    .cert{background:#fff !important; border:1px solid #000 !important;}
+    .cert-name, .cert-years{color:#000 !important;}
+    .cert-index{color:#ccc !important;}
+    .contact-link{color:#000 !important; border-color:#000 !important;}
+    .contact-link:hover{background:#fff !important;}
+    .skill-list li{color:#000 !important;}
+    .job-title, .section-head h2, .contact-head, .hero h1{color:#000 !important;}
+    .job-company, .skill-list.accent li, .cert-issuer, .project-body-inner h4{color:var(--red) !important;}
+    a{text-decoration:underline;}
+  }
+</style>
+</head>
+<body>
+<script>
+  // confirm JS is actually running before we let CSS hide anything for the
+  // scroll-reveal effect -- if this line never executes, content stays visible.
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+</script>
+
+<nav class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-mark"><span class="sq">JG</span> JOSEPH GAD</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" data-nav="home">Accueil</a></li>
+      <li><a href="#about" data-nav="about">À propos</a></li>
+      <li><a href="#experience" data-nav="experience">Expérience</a></li>
+      <li><a href="#projects" data-nav="projects">Projets</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+      <li><a href="index.html" class="lang-switch">EN</a></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Basculer le menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-watermark">JG</div>
+  <div class="container hero-inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow">Portfolio / TI et systèmes</div>
+        <h1>JOSEPH<br>G<span class="last">A</span>D</h1>
+        <div class="role">Chef d’équipe TI / Spécialiste des systèmes</div>
+        <p class="tagline">Je conçois des systèmes d’identité, de sécurité et d’infrastructure qui évoluent avec une entreprise — pas contre elle.</p>
+
+        <div class="quick-stats reveal">
+          <div class="stat"><div class="num">14+</div><div class="label">Années en TI</div></div>
+          <div class="stat"><div class="num">8+</div><div class="label">Années à diriger des équipes</div></div>
+          <div class="stat"><div class="num">6</div><div class="label">Certifications</div></div>
+          <div class="stat"><div class="num">4</div><div class="label">Langues parlées</div></div>
+        </div>
+
+        <div class="hero-actions reveal delay-1">
+          <a class="btn-solid resume-download" href="Joseph_Gad_Resumes.zip" download>Télécharger les CV (ZIP)</a>
+          <span class="btn-caption">Anglais et français — formats ATS et illustré</span>
+        </div>
+      </div>
+
+      <div class="hero-photo reveal delay-2">
+        <div class="avatar-placeholder">
+          <img class="avatar-photo" src="profile.png" alt="Joseph Gad">
+        </div>
+      </div>
+    </div>
+  </div>
+  <a href="#about" class="scroll-cta"><span>Défiler</span><span class="arrow"></span></a>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="section on-white" id="about">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="idx">01</span>
+      <h2>À propos de moi</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="draft-flag">(ébauche — à modifier pour que ça vous ressemble)</span>
+        <p class="about-bio">Je suis <strong>chef d’équipe TI et spécialiste des systèmes</strong> avec plus d’une décennie d’expérience pratique — j’ai commencé par la réparation de matériel avant de progresser vers la direction de l’identité, de la sécurité et de la stratégie d’infrastructure pour des entreprises en forte croissance. Ce parcours m’a mené de la réparation d’appareils chez Microbytes et au Genius Bar d’Apple, en passant par des rôles au service d’assistance et en administration des systèmes, jusqu’à la direction d’équipes TI partout au Canada et aux États-Unis. Je tiens à bâtir des systèmes TI qui évoluent avec une entreprise, pas contre elle : automatiser les tâches répétitives, sécuriser l’essentiel et donner aux équipes des outils qui ne leur nuisent pas. Je travaille quotidiennement en anglais, en français, en arménien et en arabe, ce qui est un atout pour soutenir des équipes réparties. En dehors du travail, j’exploite un vaste labo personnel (virtualisation, réseautique, IA autohébergée) parce que j’aime comprendre l’infrastructure à la base, pas seulement l’administrer.</p>
+      </div>
+      <div class="about-side reveal delay-1">
+        <h3>Langues</h3>
+        <div class="lang-row"><span>Anglais</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></div></div>
+        <div class="lang-row"><span>Français</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></div></div>
+        <div class="lang-row"><span>Arménien</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></div></div>
+        <div class="lang-row"><span>Arabe</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></div></div>
+
+        <div class="about-side-block">
+          <h3>Expertise technique</h3>
+          <ul class="skill-list">
+            <li><span class="skill-dot"></span>Administration de Google Workspace</li>
+            <li><span class="skill-dot"></span>Provisionnement Okta / SSO et SCIM</li>
+            <li><span class="skill-dot"></span>Cisco Meraki</li>
+            <li><span class="skill-dot"></span>Ubiquiti UniFi</li>
+            <li><span class="skill-dot"></span>Fortinet</li>
+            <li><span class="skill-dot"></span>Administration MDM (JAMF / Kandji / Intune / NinjaOne)</li>
+            <li><span class="skill-dot"></span>Scripts (Python / Bash / PowerShell)</li>
+            <li><span class="skill-dot"></span>Empaquetage macOS (pkgbuild / AutoPkg)</li>
+            <li><span class="skill-dot"></span>Sécurité des points de terminaison et EDR (CrowdStrike / Sophos)</li>
+            <li><span class="skill-dot"></span>ITIL / Gestion des services TI</li>
+            <li><span class="skill-dot"></span>Gouvernance IA/SaaS</li>
+            <li><span class="skill-dot"></span>Documentation</li>
+          </ul>
+        </div>
+
+        <div class="about-side-block">
+          <h3>Leadership et compétences interpersonnelles</h3>
+          <ul class="skill-list accent">
+            <li><span class="skill-dot"></span>Développement d’équipe et mentorat</li>
+            <li><span class="skill-dot"></span>Partenariat interfonctionnel</li>
+            <li><span class="skill-dot"></span>Évaluation de fournisseurs et projets pilotes</li>
+          </ul>
+        </div>
+
+        <div class="about-side-block">
+          <h3>Passe-temps et intérêts</h3>
+          <ul class="skill-list cols-2">
+            <li><span class="skill-dot"></span>Boxe</li>
+            <li><span class="skill-dot"></span>Arts martiaux mixtes</li>
+            <li><span class="skill-dot"></span>Mécanique automobile et course</li>
+            <li><span class="skill-dot"></span>Photographie</li>
+            <li><span class="skill-dot"></span>Cinéma</li>
+            <li><span class="skill-dot"></span>Montage vidéo</li>
+            <li><span class="skill-dot"></span>Musique</li>
+            <li><span class="skill-dot"></span>Impression 3D</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section class="section on-offwhite" id="experience">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="idx">02</span>
+      <h2>Expérience</h2>
+    </div>
+    <p class="section-sub reveal"><span class="ui-hint">Cliquez sur un poste pour afficher ses initiatives clés, puis cliquez sur une initiative pour en voir le contexte complet, les actions et l’impact. </span>Le texte en italique jaune indique un espace réservé à remplir avec de vrais chiffres.</p>
+
+    <div class="accordion-controls reveal">
+      <button class="btn-outline" onclick="toggleAll(true)">Déployer tous les projets</button>
+      <button class="btn-outline" onclick="toggleAll(false)">Tout réduire</button>
+    </div>
+
+    <div class="timeline">
+    <!-- MAINTAINX -->
+    <div class="timeline-item reveal">
+      <div class="timeline-marker">
+        <span class="timeline-date">2024 – Présent</span>
+        <span class="timeline-dot"></span>
+      </div>
+      <details class="job" open>
+      <summary class="job-head">
+        <div>
+          <span class="job-title">Chef d’équipe TI / Spécialiste des systèmes</span>
+          <span class="job-company">MaintainX</span>
+        </div>
+        <div class="job-head-side">
+          <div class="job-dates">2024 – Présent</div>
+          <span class="job-chevron">+</span>
+        </div>
+      </summary>
+      <div class="job-body">
+      <div class="job-core">
+        <p>Je me suis joint à MaintainX comme environ le 350e employé et j’ai évolué avec l’entreprise jusqu’à plus de 900 employés. J’ai dirigé l’infrastructure d’identité et de sécurité, la gestion du cycle de vie des appareils à l’échelle mondiale, la gouvernance IA/SaaS et la mise sur pied de la structure organisationnelle du service, tout en restant impliqué dans le travail technique quotidien. Voici à quoi ça ressemblait :</p>
+      </div>
+
+      <div class="projects-label">Initiatives clés — cliquez pour déployer</div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Déploiement SSO OKTA et Google Workspace</span><span class="sub">Mise en œuvre d’un IDP à l’échelle de l’entreprise</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Je me suis joint à MaintainX comme environ le 350e employé et je me suis rapidement mis à niveau sur la pile SaaS existante et la configuration RBAC déjà en place. Quelques mois plus tard, l’entreprise a adopté OKTA comme fournisseur d’identité, ce qui a exigé une réévaluation complète de la circulation de l’identité dans toute la pile.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Audité l’ensemble du parc SaaS de l’entreprise (~180 applications, dont environ 20 outils hébergés à l’interne) pour évaluer la prise en charge SSO/SCIM selon nos paliers de licence existants, puis négocié des mises à niveau de palier auprès des fournisseurs pour combler les lacunes importantes</li>
+            <li>Repensé le flux d’identité autour d’OKTA, en bâtissant un provisionnement dynamique de groupes basé sur le RBAC par service, rôle et emplacement, avec Hibob (notre SIRH) comme source de vérité pour l’identité</li>
+            <li>Mis en œuvre le provisionnement SCIM pour un cycle de vie des utilisateurs plus propre et automatisé, et déployé le provisionnement de groupes par push pour les applications SaaS qui le prenaient en charge — en exécutant OKTA et Google Groups en parallèle pour que les intégrations natives de Workspace (partage Drive, etc.) continuent de fonctionner sans accroc</li>
+            <li>Réalisé un déploiement SSO à l’échelle de l’entreprise sur Google Workspace et OKTA en environ un an, sans aucune interruption des opérations</li>
+            <li>Évalué nos outils de gestion SaaS dans le cadre du même audit et migré de Torii vers le SaaS Manager de 1Password (anciennement Trelica) après avoir constaté que l’intégration OKTA/SCIM de Torii n’était pas fiable — même coût, ensemble de fonctionnalités nettement supérieur</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Offert à chaque employé une authentification plus simple et plus sécuritaire en réduisant le nombre de comptes et de mots de passe distincts à gérer dans les gestionnaires de mots de passe, simplifiant ainsi les processus de connexion au quotidien. Mis à l’échelle OKTA pour gérer et superviser <strong>plus de 180 applications SaaS</strong> à l’échelle de l’entreprise sous une gestion de l’identité centralisée et renforcée. Le même audit des paliers de licence a aussi permis de repérer des sièges rarement utilisés à éliminer — <strong>50 000 $ économisés</strong> rien que sur le ménage des licences Atlassian, avec un exercice semblable pour Figma.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Migration EDR : SentinelOne → CrowdStrike</span><span class="sub">Transition de la détection et réponse des points de terminaison à l’échelle du parc</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Le déploiement SentinelOne existant du parc devait migrer vers CrowdStrike pour une meilleure couverture de détection et de réponse des points de terminaison, sans laisser d’agents orphelins ni de conflits sur les appareils en cours de migration — sur un parc d’environ <strong>600 points de terminaison</strong> (450 Mac / 130 Windows / 20 Linux) avec une équipe TI restreinte de 3 personnes.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Créé un script Python personnalisé pour désinstaller et remapper proprement l’ancien agent SentinelOne pendant la transition, évitant les conflits et les installations orphelines sur l’ensemble du parc</li>
+            <li>Séquencé la migration par plateforme : les appareils Mac exécutaient un script de préinstallation déclenché par Kandji/Iru (désinstaller SentinelOne → valider → installer CrowdStrike); les ingénieurs Linux exécutaient le script de retrait/installation manuellement; Windows nécessitait d’abord l’inscription de chaque appareil dans le RMM NinjaOne nouvellement déployé, puis le déclenchement de l’installation de CrowdStrike par son entremise</li>
+            <li>Étalé toute la transition en <strong>13 vagues sur 4 semaines</strong> pour garder le soutien gérable pour une équipe de 3 personnes, en tenant compte des congés estivaux</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Réalisé une transition EDR propre à l’échelle du parc, sans agents orphelins ni conflits d’installation, en environ un mois, rehaussant la posture de sécurité des points de terminaison de l’entreprise malgré une équipe de soutien restreinte.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Consolidation MDM multiplateforme</span><span class="sub">Miradore → NinjaOne, avec Kandji/Iru pour Apple</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>L’ancien MDM Miradore de l’entreprise ne répondait plus aux besoins de gestion des points de terminaison Windows à mesure que le parc prenait de l’ampleur, et n’avait jamais pris en charge Linux — ce qui exigeait une nouvelle évaluation de l’outil approprié pour chaque plateforme.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Mené un projet pilote évaluant Microsoft Intune pour la gestion des points de terminaison Windows/Linux; l’a rejeté en raison du coût et de la performance, puis migré le parc (~130 appareils) de Miradore vers NinjaOne — étendant la couverture gérée aux appareils Linux pour la première fois</li>
+            <li>Maintenu la gestion des appareils Apple sur sa propre voie dédiée via Apple Business Manager et le MDM Kandji/Iru plutôt que d’imposer un seul outil multiplateforme</li>
+            <li>Rédigé des scripts d’installation Python et Bash, déployés via le MDM, pour appliquer des restrictions de poste adaptées au RBAC (comptes standards ou administrateurs) et normaliser la configuration système sur l’ensemble du parc</li>
+            <li>Créé un pipeline AutoPkg → Kandji Self Service pour garder à jour les applications macOS hébergées à l’interne et les applications tierces courantes, permettant aux utilisateurs finaux d’installer eux-mêmes les applications au besoin plutôt que de réempaqueter manuellement à chaque mise à jour</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Ajusté le MDM à la bonne taille pour chaque plateforme plutôt que d’imposer un seul outil mal adapté à tout — comblant une réelle lacune de couverture sur Linux — tout en normalisant la configuration de sécurité et la politique de restriction des comptes à l’échelle du parc grâce à une automatisation scriptée déployée par le MDM.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Initiative de standardisation sur Apple</span><span class="sub">Proposition étayée par des tests comparatifs pour retirer Windows du parc</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Les mises à jour et le matériel Windows causaient de fréquentes perturbations pour les utilisateurs finaux — taux d’échec élevés, provisionnement lent des nouveaux employés, et autonomie/performance nettement inférieures au matériel Mac à prix comparable. Plutôt que d’imposer simplement une opinion, j’ai bâti une véritable analyse de rentabilisation.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Rédigé et présenté une proposition formelle appuyée par des données de tests comparatifs tiers — comparaisons d’autonomie et de performance par watt entre les générations MacBook Pro M4/M3/M2 et des ultraportables et portables de jeu Windows comparables</li>
+            <li>Exposé les inconvénients concrets de Windows (temps de configuration, problèmes de performance/stabilité, prise en charge des pilotes, autonomie) ainsi que la seule limite légitime à la standardisation sur Mac : les processus Excel/tableaux croisés dynamiques des Finances, pleinement fiables uniquement sur Excel Windows x86</li>
+            <li>Évalué deux avenues de virtualisation pour combler cet écart — UTM (gratuit, source ouverte, mais sans virtualisation GPU) et Parallels (payant, natif ARM avec accélération GPU, mode Coherence et déploiement centralisé via Kandji) — et déployé Parallels pour les irréductibles des Finances</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Fait passer l’entreprise d’un environnement majoritairement Windows à environ <strong>40 postes Windows sur ~900 employés</strong> — un parc standardisé sur Apple à plus de 95 % — tout en offrant aux utilisateurs encore dépendants de Windows une voie pleinement soutenue par la virtualisation plutôt que de les laisser pour compte.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Gouvernance du déploiement IA et SaaS</span><span class="sub">ChatGPT → suite d’IA Claude d’Anthropic</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Dirigé le déploiement de ChatGPT Enterprise d’OpenAI à l’échelle de l’entreprise en septembre 2025, un déploiement simple compte tenu du paysage IA plus simple à l’époque. À mesure que la suite d’IA Claude d’Anthropic gagnait en maturité, ses capacités agentiques et d’autohébergement — Claude Code, compétences personnalisées, intégrations MCP — se sont mises à croître assez rapidement pour que l’usage informel ne puisse plus évoluer de façon sécuritaire à lui seul. Plutôt que d’attendre un incident, j’ai devancé le problème en m’associant à l’équipe de Sécurité pour bâtir une véritable couche de gouvernance avant d’ouvrir davantage les outils.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Configuré toute la pile d’entreprise autour du déploiement de la suite d’IA Claude : identité OKTA, groupes par push, politique de gouvernance et RBAC circonscrit par module (Code / AI / Design / Cowork) plutôt qu’un accès global, contenant le risque d’exposition de la propriété intellectuelle et des données clients avant le déploiement à l’échelle de l’entreprise</li>
+            <li>Mis en place, en partenariat avec la Sécurité, un processus formel d’évaluation des outils MCP et de révision de sécurité pour tout nouveau plugiciel, connecteur, intégration MCP ou application interne hébergée sur mesure avant son approbation</li>
+            <li>Organisé une réponse de soutien agile lors d’une panne survenue le jour même d’une migration de plateforme, en guidant les utilisateurs en temps réel à travers les problèmes de connexion</li>
+            <li>Pris en charge la documentation de soutien interne, en la gardant constamment à jour et exacte à mesure que les outils évoluaient</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Établi un cadre proactif de gouvernance IA/SaaS — bâti en avance sur la courbe de risque plutôt qu’en réaction à un incident — couvrant l’identité, l’accès circonscrit par module et l’évaluation des outils MCP/connecteurs, permettant à l’entreprise d’adopter rapidement de puissants nouveaux outils d’IA sans compromettre la sécurité.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Plateforme mondiale d’approvisionnement et de cycle de vie des appareils (Growrk)</span><span class="sub">Approvisionnement, expédition, inscription MDM et cycle de vie des actifs</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>L’approvisionnement et la récupération de matériel pour une poignée d’employés à distance dispersés à l’international représentaient un véritable point de friction : la disponibilité des appareils est devenue nettement plus difficile pendant la pénurie de composants matériels causée par la demande des centres de données pour l’IA, et récupérer l’équipement après un départ était un casse-tête récurrent en soi.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Adopté Growrk comme service à la carte d’approvisionnement d’appareils, d’entreposage et de logistique inverse — un choix délibéré plutôt qu’une automatisation plus poussée (p. ex. intégrée au SIRH), puisque le volume d’embauche à l’international n’a jamais justifié un tel développement; l’embauche était concentrée surtout au Canada et aux États-Unis, avec quelques embauches occasionnelles à l’étranger</li>
+            <li>Utilisé l’entreposage de Growrk pour maintenir un stock prépositionné et contourner la pénurie de matériel liée à l’IA, plutôt que de réagir commande par commande à l’arrivée des nouveaux employés</li>
+            <li>Misé sur le service d’effacement/nettoyage en usine et de test en atelier de Growrk pour régler la récupération et le reprovisionnement des appareils après un départ, au lieu de courir après le matériel retourné et de le remettre à neuf manuellement</li>
+            <li>Créé un pipeline complet d’inscription des appareils Apple via l’intégration d’Apple Business Manager avec le MDM Iru (Kandji, renommé), remplissant automatiquement les fiches d’actifs et synchronisant l’état de santé et la propriété des appareils tout au long de leur cycle de vie</li>
+            <li>Assuré le renouvellement de matériel et l’approvisionnement d’intégration pour des employés à distance au Kazakhstan, en Argentine, en Suisse, en Colombie, en Ukraine et aux Philippines</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Maintenu la continuité du matériel malgré une véritable pénurie de composants à l’échelle de l’industrie grâce à un inventaire prépositionné, et transformé la récupération des appareils lors des départs d’une course manuelle en un processus standard de logistique inverse — sans surconstruire une automatisation que le volume d’embauche ne justifiait pas.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Bâti la structure organisationnelle du service TI de A à Z</span><span class="sub">Rôles, responsabilités et cheminements de carrière</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>À mesure que le service prenait de l’ampleur avec la croissance de l’entreprise, passant d’environ 350 à plus de 900 employés, l’équipe n’avait aucune structure formelle définissant les rôles, les responsabilités ou les cheminements de progression.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Défini les rôles, les responsabilités et les niveaux d’expérience pour chaque membre de l’équipe TI</li>
+            <li>Personnellement interviewé et embauché de nouveaux techniciens dans les bureaux de Montréal et de Raleigh, alors que l’entreprise passait d’environ 550 à 1 000 employés</li>
+            <li>Collaboré avec les RH pour bâtir des cheminements de carrière liés à cette structure</li>
+            <li>Mené le projet à terme sur plusieurs mois de suivi soutenu et l’a annoncé à toute l’équipe</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Livré la première structure organisationnelle définie du service — faisant passer l’équipe de <strong>2 à 6 techniciens</strong> (1 junior, 3 intermédiaires, 2 seniors) avec un cheminement d’avancement clair, tous relevant de moi jusqu’au directeur des TI et de la Sécurité.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Gestionnaire TI qui reste technique</span><span class="sub">Croissance en leadership sans délaisser le travail technique</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Concilier à la fois le travail de contributeur individuel, la gestion des personnes, l’intégration, la gestion de projets et la coordination interservices a exigé une évolution délibérée de la façon dont le rôle était exercé.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Assumé l’ensemble des responsabilités de gestionnaire TI — en donnant une orientation et en structurant l’équipe — tout en restant impliqué et technique plutôt que de basculer vers un rôle purement gestionnaire</li>
+            <li>Délégué la responsabilité d’une migration SSO complète de 1Password vers OKTA à un employé sous ma supervision plutôt que de la mener personnellement, et le projet a été livré avec succès</li>
+            <li>Formé et encadré directement les nouveaux membres et les membres existants de l’équipe, en restant près du travail technique tout en développant leurs compétences</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Bâti une structure de gestion qui dépasse le seul point d’escalade que je représentais, sans pour autant délaisser la prise en charge technique directe.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Partenariat TI interfonctionnel</span><span class="sub">RH, RevOps, ingénierie, ventes, finances et produit</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>À mesure que l’empreinte des TI s’étendait au sein d’une entreprise en forte croissance, j’ai travaillé à faire des TI un partenaire fiable et réactif pour tous les services plutôt qu’un goulot d’étranglement.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Collaboré étroitement avec les RH/People, RevOps, l’ingénierie, les ventes, les finances et le produit sur l’intégration, les demandes urgentes et les initiatives interfonctionnelles</li>
+            <li>Participé aux évaluations de sécurité destinées aux clients</li>
+            <li>Amélioré la qualité des appels de vente grâce à l’évaluation d’outils et à des projets pilotes</li>
+            <li>Soutenu l’amélioration des outils de Customer Success par la configuration de Microsoft Teams à l’aide de PowerShell</li>
+            <li>Contribué à l’expansion du bureau de Raleigh, en gérant les délais et les défis logistiques pour livrer le bureau prêt à l’usage</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Positionné les TI comme un partenaire réactif et intégré à l’ensemble de l’entreprise plutôt qu’une fonction de soutien réactive.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Stratégie et évaluation de l’infrastructure</span><span class="sub">Projets pilotes Serval (ITSM) et pile réseau Fortinet</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Mené des projets pilotes pour appuyer les décisions d’infrastructure à venir pour le service.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Dirigé un projet pilote approfondi de Serval comme plateforme de billetterie ITSM potentielle, en le testant selon des scénarios réels de soutien quotidien et des besoins de configuration avant de formuler une recommandation claire</li>
+            <li>Mené un projet pilote d’évaluation d’une pile réseau Fortinet pour le matériel réseau de l’entreprise, mené jusqu’à une recommandation documentée</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Fourni à la direction des recommandations claires et fondées sur des données probantes sur les deux fronts — prolongeant une expérience réseau qui couvre Cisco Meraki (Leap Event Technology), Ubiquiti UniFi et Fortinet (MaintainX), WatchGuard, ainsi qu’un environnement de labo personnel autoconstruit (pfSense, WireGuard, OpenVPN).</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Développé des outils TI internes sur le produit de MaintainX</span><span class="sub">Solution de rechange économique à une plateforme ITSM/actifs tierce</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Le produit de MaintainX est un logiciel de GMAO (gestion de maintenance assistée par ordinateur) conçu pour les opérations de maintenance physique, et non pour la gestion des actifs ou des services TI — mais la plateforme sous-jacente était assez flexible pour être réaffectée aux deux usages, évitant ainsi le coût d’un outil tiers distinct.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Créé des automatisations et des configurations personnalisées pour gérer le suivi des actifs et de l’inventaire du service sur le produit même de MaintainX</li>
+            <li>Mis en place une plateforme interne ITSM/service d’assistance sur le même produit — couvrant l’intégration, le soutien et les actifs/inventaire en un seul endroit — avec des automatisations personnalisées et des intégrations Slack pour les processus de billetterie</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Évité complètement l’octroi de licence pour un outil ITSM/actifs tiers distinct, tout en démontrant l’expertise interne nécessaire pour transformer un outil non conventionnel en plateforme d’exploitation centrale du service.</li></ul>
+        </div></div>
+      </div>
+      </div>
+      </details>
+    </div>
+
+    <!-- LEAP -->
+    <div class="timeline-item reveal">
+      <div class="timeline-marker">
+        <span class="timeline-date">2018 – 2024</span>
+        <span class="timeline-dot"></span>
+      </div>
+      <details class="job">
+      <summary class="job-head">
+        <div>
+          <span class="job-title">Chef d’équipe TI / Administrateur des systèmes</span>
+          <span class="job-company">Leap Event Technology</span>
+        </div>
+        <div class="job-head-side">
+          <div class="job-dates">2018 – 2024</div>
+          <span class="job-chevron">+</span>
+        </div>
+      </summary>
+      <div class="job-body">
+      <div class="job-core">
+        <ul>
+          <li>Élaboré des politiques TI conformes aux normes ITIL; administration réseau sur la suite Meraki de Cisco (pare-feu / commutateurs / points d’accès sans fil)</li>
+        </ul>
+      </div>
+
+      <div class="projects-label">Initiatives clés — cliquez pour déployer</div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Consolidation de l’annuaire Google Workspace</span><span class="sub">Fusion de 8 environnements d’annuaire infonuagique</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>L’entreprise avait accumulé au fil du temps 8 environnements d’annuaire infonuagique distincts (un mélange de locataires Microsoft 365 et Google Workspace, hérités de plusieurs jeunes entreprises acquises).</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Audité <strong>environ 500 comptes d’employés et 40 comptes de service</strong> répartis dans les 8 environnements</li>
+            <li>Consolidé d’abord les 3 instances distinctes de Microsoft 365 en une seule, puis migré ce locataire combiné vers l’environnement Google Workspace principal, en y intégrant les autres locataires Google Workspace</li>
+            <li>Répliqué chaque boîte courriel et chaque Drive, puis désactivé (plutôt que supprimé) les comptes hérités une fois migrés, en les conservant à des fins d’audit et de récupération</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Consolidé 8 annuaires fragmentés en un seul locataire Google Workspace propre et conforme aux exigences d’audit, en 3 à 4 mois — les temps de chargement de la migration ont été le véritable goulot d’étranglement, pas le plan lui-même.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Refonte du service d’assistance — Atlassian Jira Service Management</span><span class="sub">Remplacement du système de billetterie hérité</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Avant cela, il n’existait aucun système formel de service d’assistance — un seul technicien traitait les demandes de soutien de façon ponctuelle sur Slack pour toute l’entreprise.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Mis en œuvre Jira Service Management comme nouvelle plateforme de service d’assistance à l’échelle de l’entreprise</li>
+            <li>Bâti de A à Z des processus de billets basés sur des SLA et une base de connaissances libre-service</li>
+            <li>Migré les données historiques des billets et formé l’équipe sur le nouveau système</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Passé d’un soutien ponctuel par un seul technicien sur Slack à une <strong>moyenne de SLA de 98 % pour 350 employés</strong>, soutenue par une équipe TI de base de 3 personnes et des ingénieurs DevOps gérant les débordements de billets.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Responsable TI pour le changement de marque de l’entreprise</span><span class="sub">Transition de l’identité et des systèmes à l’échelle de l’entreprise</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Agi comme représentant TI principal lors d’un changement de marque complet de l’entreprise.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Migré les domaines, les courriels et les actifs de marque sur <span class="placeholder">[nombre de systèmes]</span></li>
+            <li>Mis à jour l’image de marque du SSO/de la connexion et coordonné la transition technique avec le marketing et la direction</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li><span class="placeholder">[p. ex., transition réalisée sans interruption / sans perturbation des événements clients actifs]</span></li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Soutien d’activation sur place — UFC International Fight Week</span><span class="sub">Déploiement technologique pour événement en direct</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Fourni un soutien TI/technologique sur place pour l’expo des fans de UFC International Fight Week — un événement en direct très visible, à tolérance zéro pour les interruptions, se déroulant le vendredi et le samedi.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Soutenu la technologie de la file d’inscription et des rencontres avec les fans pour l’expo de 2 jours</li>
+            <li>Fourni un soutien technique en temps réel pour une activation de chasse au trésor sur place tout au long de l’événement</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Maintenu le bon fonctionnement de l’inscription, des rencontres avec les fans et de l’activation de chasse au trésor pendant les deux jours d’un événement public très visible.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Administration de la sécurité des points de terminaison Sophos</span><span class="sub">Règles de détection personnalisées et ajustement des politiques</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>L’entreprise s’appuyait sur Sophos pour la sécurité des points de terminaison et devait maintenir et ajuster activement ses règles de détection et ses politiques plutôt que de les laisser à la configuration par défaut.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Administré au quotidien l’environnement de sécurité des points de terminaison Sophos de l’entreprise</li>
+            <li>Développé des règles de détection et des politiques personnalisées adaptées à l’environnement</li>
+            <li>Évalué directement le service de gestion des points de terminaison de Sophos dans le cadre d’une évaluation continue des outils de sécurité</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Maintenu la sécurité des points de terminaison ajustée au profil de risque réel de l’entreprise plutôt que de s’appuyer sur la configuration par défaut du fournisseur.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Fondation MDM et sécurité des points de terminaison (JAMF)</span><span class="sub">Mise en place de la gestion du parc Apple</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>L’entreprise n’avait aucune plateforme formelle de gestion des appareils pour son parc Apple — les nouveaux Mac étaient imagés manuellement à partir d’une clé USB, un à la fois.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li>Déployé JAMF Pro comme plateforme MDM de l’entreprise, connectée à Apple Business Manager pour une inscription DEP sans intervention</li>
+            <li>Établi des référentiels de conformité et de sécurité, en inscrivant environ <strong>400 appareils Mac</strong> (ordinateurs portables des employés et unités de terrain/kiosque déployées sur place lors d’événements)</li>
+            <li>Utilisé JAMF pour le déploiement continu des applications, la gestion des correctifs et le suivi de l’inventaire du parc</li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li>Réduit la configuration des appareils des nouveaux employés de <strong>30 à 60 minutes</strong> d’imagerie manuelle par clé USB à <strong>10 à 15 minutes</strong> de provisionnement sans intervention — jetant les bases qui seraient plus tard étendues à Kandji/Iru chez MaintainX.</li></ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Soutien à la restructuration de l’entreprise post-COVID</span><span class="sub">Opérations TI pendant la transition vers le mode hybride</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Contexte</h4>
+          <ul><li>Soutenu les opérations TI pendant la restructuration de l’entreprise à la suite des perturbations causées par la COVID-19 dans l’industrie des événements en direct.</li></ul>
+          <h4>Ce que j’ai fait</h4>
+          <ul>
+            <li><span class="placeholder">[p. ex., réapprovisionné/récupéré l’équipement, activé des outils de travail à distance, mis à jour la politique de sécurité pour une main-d’œuvre hybride]</span></li>
+          </ul>
+          <h4>Impact</h4>
+          <ul><li><span class="placeholder">[p. ex., transition de X % de la main-d’œuvre vers un mode hybride/à distance en X semaines, sans incident de sécurité]</span></li></ul>
+        </div></div>
+      </div>
+      </div>
+      </details>
+    </div>
+    </div>
+
+    <!-- EARLIER ROLES -->
+    <div class="earlier-wrap reveal">
+      <div class="earlier-label">Début de carrière</div>
+      <div class="earlier-grid">
+        <details class="simple-job" open>
+          <summary class="job-head">
+            <div><span class="job-title">Technicien de soutien informatique</span><span class="job-company">Yellow Pages</span></div>
+            <div class="job-head-side">
+              <div class="job-dates">2017 – 2018</div>
+              <span class="job-chevron">+</span>
+            </div>
+          </summary>
+          <div class="simple-job-body">
+          <ul>
+            <li>Administré les environnements Active Directory et Microsoft Exchange</li>
+            <li>Fourni un soutien technique matériel/logiciel; maintenu et audité l’inventaire matériel</li>
+          </ul>
+          </div>
+        </details>
+
+        <details class="simple-job" open>
+          <summary class="job-head">
+            <div><span class="job-title">Technicien senior, service d’assistance TI</span><span class="job-company">CGI</span></div>
+            <div class="job-head-side">
+              <div class="job-dates">2016 – 2017</div>
+              <span class="job-chevron">+</span>
+            </div>
+          </summary>
+          <div class="simple-job-body">
+          <ul>
+            <li>Supervisé les agents du service d’assistance de niveaux 1 et 2 et créé une documentation de dépannage utilisée par toute l’équipe</li>
+            <li>Assuré la formation et l’intégration des nouveaux employés du service d’assistance</li>
+          </ul>
+          </div>
+        </details>
+
+        <details class="simple-job" open>
+          <summary class="job-head">
+            <div><span class="job-title">Genius</span><span class="job-company">Apple</span></div>
+            <div class="job-head-side">
+              <div class="job-dates">2014 – 2016</div>
+              <span class="job-chevron">+</span>
+            </div>
+          </summary>
+          <div class="simple-job-body">
+          <ul>
+            <li>Réparé des appareils Mac et iOS; fourni un soutien logiciel MacOS/iOS</li>
+            <li>Coordonné la file d’attente du Genius Bar afin de répondre aux besoins des clients dans les délais du SLA</li>
+          </ul>
+          </div>
+        </details>
+
+        <details class="simple-job" open>
+          <summary class="job-head">
+            <div><span class="job-title">Technicien en réparation d’ordinateurs</span><span class="job-company">Microbytes</span></div>
+            <div class="job-head-side">
+              <div class="job-dates">2012 – 2014</div>
+              <span class="job-chevron">+</span>
+            </div>
+          </summary>
+          <div class="simple-job-body">
+          <ul>
+            <li>Effectué l’entretien matériel et logiciel des appareils des clients</li>
+            <li>Géré l’inventaire du service de réparation</li>
+          </ul>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CERTIFICATIONS ============ -->
+<section class="section on-black" id="certifications">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="idx">03</span>
+      <h2>Certifications</h2>
+    </div>
+    <div class="cert-grid reveal">
+      <div class="cert">
+        <div class="cert-index">01</div>
+        <div class="cert-name">Administrateur certifié Okta</div>
+        <div class="cert-issuer">Administrateur certifié Okta</div>
+        <div class="cert-years">2023 – 2026</div>
+      </div>
+      <div class="cert">
+        <div class="cert-index">02</div>
+        <div class="cert-name">Administrateur certifié Microsoft</div>
+        <div class="cert-issuer">Administrateur certifié Microsoft</div>
+        <div class="cert-years">2017 – 2020</div>
+      </div>
+      <div class="cert">
+        <div class="cert-index">03</div>
+        <div class="cert-name">Administrateur Google Workspace</div>
+        <div class="cert-issuer">Administrateur certifié Google</div>
+        <div class="cert-years">2019 – 2023</div>
+      </div>
+      <div class="cert">
+        <div class="cert-index">04</div>
+        <div class="cert-name">Administrateur certifié Kandji/Iru</div>
+        <div class="cert-issuer">Administrateur certifié KANDJI</div>
+        <div class="cert-years">2023 – 2026</div>
+      </div>
+      <div class="cert">
+        <div class="cert-index">05</div>
+        <div class="cert-name">Administrateur certifié JAMF</div>
+        <div class="cert-issuer">Administrateur JAMF SUITE</div>
+        <div class="cert-years">2020 – 2023</div>
+      </div>
+      <div class="cert">
+        <div class="cert-index">06</div>
+        <div class="cert-name">Technicien certifié Apple</div>
+        <div class="cert-issuer">Technicien certifié Apple</div>
+        <div class="cert-years">2015 – 2017</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS / HOME LAB ============ -->
+<section class="section on-offwhite" id="projects">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="idx">04</span>
+      <h2>Projets | Labo personnel</h2>
+    </div>
+    <p class="section-sub ui-hint reveal">Cliquez sur une carte pour la déployer.</p>
+
+    <div class="lab-grid">
+      <div class="project reveal">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Serveur de virtualisation</span><span class="sub">Hyperviseur Proxmox</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <ul>
+            <li>Hébergement d’une plateforme NAS à source ouverte (TrueNAS Scale)</li>
+            <li>Exécution d’environnements Windows/Linux/Mac entièrement accélérés graphiquement</li>
+            <li>Exécution de services domotiques (Home Assistant) sur plusieurs conteneurs Debian</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="project reveal delay-1">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Réseau domestique</span><span class="sub">Hyperviseur pfSense / Proxmox</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <ul>
+            <li>Configuré une instance virtualisée du pare-feu à source ouverte pfSense</li>
+            <li>Mis en place un WAN gigabit+ avec un commutateur défini par logiciel utilisant des cartes réseau 10 Gb et 2,5 Gb</li>
+            <li>Configuré un VPN privé utilisant le protocole WireGuard</li>
+            <li>Mis en place un VPN public utilisant le protocole OpenVPN hébergé via NordVPN</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="project reveal">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Environnement d’IA autohébergé</span><span class="sub">Test éducatif de flux de travail en IA</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <ul>
+            <li>Autohébergement d’outils d’IA à source ouverte à des fins éducatives et pour tester des flux de travail modernes en IA (p. ex., OpenClaw)</li>
+            <li>Créé des flux de travail automatisés pour des charges de travail liées aux finances à l’aide d’OpenClaw et d’Alpaca — exécutant des mesures de risque et des analyses graphiques basées sur les tendances et les événements politiques/de marché, avec des mécanismes de protection pour gérer le risque de perte</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="project reveal delay-1">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Serveur de jeu</span><span class="sub">Windows / Proxmox</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <ul>
+            <li>Configuration personnalisée de Windows 11 Pro (ReviOS)</li>
+            <li>Configuré la diffusion de jeux à distance (Apollo) pour une expérience de type console via le client à distance Moonlight, depuis n’importe quel appareil, localement ou à distance</li>
+          </ul>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<section class="contact-section" id="contact">
+  <div class="hero-watermark">JG</div>
+  <div class="container">
+    <div class="reveal">
+      <div class="hero-eyebrow">Entrons en contact</div>
+      <h2 class="contact-head">CONSTRUISONS<br>QUELQUE CHOSE<span class="dot">.</span></h2>
+      <p class="contact-lead">Ouvert aux discussions sur le leadership TI, l’architecture des systèmes et la stratégie d’infrastructure.</p>
+    </div>
+
+    <div class="contact-links reveal delay-1">
+      <a class="contact-link" href="tel:5144657309">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        514.465.7309
+      </a>
+      <a class="contact-link" href="mailto:Joeygad19@gmail.com">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+        Joeygad19@gmail.com
+      </a>
+      <a class="contact-link" href="https://linkedin.com/in/joeygad" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/joeygad
+      </a>
+      <a class="contact-link resume-download" href="Joseph_Gad_Resumes.zip" download>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
+        Télécharger les CV (ZIP)
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-note">Le texte en italique surligné en jaune indique un espace réservé — à remplir avec de vrais chiffres/détails avant l’envoi.<span class="ui-hint"> Cliquez sur un poste dans Expérience pour afficher ses initiatives clés, ou sur une rangée « Initiatives clés » / « Labo personnel » pour la déployer davantage — tout se déploie automatiquement à l’impression ou à l’exportation en PDF. Utilisez « Télécharger les CV (ZIP) » pour obtenir les CV en anglais/français, en formats ATS et illustré.</span></div>
+      <div>&copy; 2026 Joseph Gad</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ---- accordion ----
+  function toggleProject(btn){
+    var proj = btn.parentElement;
+    var isOpen = proj.classList.toggle('open');
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+  function toggleAll(open){
+    document.querySelectorAll('.job, .simple-job').forEach(function(d){ d.open = open; });
+    document.querySelectorAll('.project').forEach(function(p){
+      p.classList.toggle('open', open);
+      var t = p.querySelector('.project-toggle');
+      if(t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+
+  // ---- mobile hamburger ----
+  var nav = document.getElementById('siteNav');
+  var hamburgerBtn = document.getElementById('hamburgerBtn');
+  var navLinks = document.getElementById('navLinks');
+  hamburgerBtn.addEventListener('click', function(){
+    var isOpen = nav.classList.toggle('open');
+    hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('open');
+      hamburgerBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // ---- scroll-spy via IntersectionObserver ----
+  var sectionIds = ['home','about','experience','projects','contact'];
+  var navMap = {};
+  navLinks.querySelectorAll('a[data-nav]').forEach(function(a){
+    navMap[a.getAttribute('data-nav')] = a;
+  });
+  var spyObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        var id = entry.target.id;
+        Object.keys(navMap).forEach(function(key){
+          navMap[key].classList.toggle('active', key === id);
+        });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+  sectionIds.forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) spyObserver.observe(el);
+  });
+
+  // ---- reduced motion check (governs reveal + parallax) ----
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- scroll reveal ----
+  if(prefersReducedMotion){
+    document.querySelectorAll('.reveal').forEach(function(el){
+      el.classList.add('in-view');
+    });
+  } else {
+    var revealObserver = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function(el){
+      revealObserver.observe(el);
+    });
+    // safety net: force everything visible after a short delay no matter what,
+    // in case the observer never fires in some embedding/preview context.
+    setTimeout(function(){
+      document.querySelectorAll('.reveal:not(.in-view)').forEach(function(el){
+        el.classList.add('in-view');
+      });
+    }, 1500);
+  }
+
+  // ---- background parallax on the JG watermark(s) ----
+  if(!prefersReducedMotion){
+    var watermarks = document.querySelectorAll('.hero-watermark');
+    var parallaxTicking = false;
+    function updateWatermarkParallax(){
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      var offset = y * 0.05; // small magnitude, not distracting
+      watermarks.forEach(function(el){
+        el.style.transform = 'translateY(calc(-50% + ' + offset + 'px))';
+      });
+      parallaxTicking = false;
+    }
+    window.addEventListener('scroll', function(){
+      if(!parallaxTicking){
+        window.requestAnimationFrame(updateWatermarkParallax);
+        parallaxTicking = true;
+      }
+    }, { passive: true });
+    updateWatermarkParallax();
+  }
+
+</script>
+
+</body>
+</html>
