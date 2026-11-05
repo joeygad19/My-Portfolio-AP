@@ -2,7 +2,7 @@
 <html lang="en" class="no-js">
 <head>
 <meta charset="UTF-8">
-<title>Joseph Gad | IT Team Lead &amp; Systems Specialist</title>
+<title>Joseph Gad — IT Systems &amp; Applications Lead</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
   :root{
@@ -360,6 +360,18 @@
     align-items:start;
   }
   @media (max-width:860px){ .about-grid{grid-template-columns:1fr; gap:40px;} }
+  .draft-flag{
+    display:inline-block;
+    font-style:italic;
+    font-size:0.78rem;
+    color:#7a5b00;
+    background:#fff3cd;
+    padding:3px 10px;
+    border-radius:2px;
+    margin-bottom:18px;
+    font-weight:600;
+    letter-spacing:.2px;
+  }
   .about-bio{
     font-size:1.28rem;
     line-height:1.65;
@@ -550,6 +562,7 @@
   html.js .project-body{max-height:0; border-top:0 solid var(--ink);}
   html.js .project.open .project-body{max-height:1400px; border-top:2px solid var(--ink);}
   .project-body-inner{padding:22px 24px 26px;}
+  .project-shot{display:block;width:100%;max-width:820px;height:auto;margin:0 0 16px;border:2px solid var(--ink);border-radius:10px;background:#000;}
   .project-body-inner h4{
     font-size:0.72rem;
     text-transform:uppercase;
@@ -812,6 +825,7 @@
     .timeline-date{display:none !important;}
     .hero .role{color:#000 !important;}
     .hero .tagline{color:#333 !important;}
+    .ui-hint{display:none !important;}
     .section, .hero, .contact-section{
       background:#fff !important;
       color:#000 !important;
@@ -858,9 +872,10 @@
       <li><a href="#home" data-nav="home">Home</a></li>
       <li><a href="#about" data-nav="about">About</a></li>
       <li><a href="#experience" data-nav="experience">Experience</a></li>
+      <li><a href="#certifications" data-nav="certifications">Certifications</a></li>
       <li><a href="#projects" data-nav="projects">Projects</a></li>
       <li><a href="#contact" data-nav="contact">Contact</a></li>
-      <li><a href="portfolio_bold_fr.html" class="lang-switch">FR</a></li>
+      <li><a href="index_fr.html" class="lang-switch">FR</a></li>
     </ul>
     <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -876,8 +891,8 @@
       <div class="hero-copy">
         <div class="hero-eyebrow">Portfolio / IT &amp; Systems</div>
         <h1>JOSEPH<br>G<span class="last">A</span>D</h1>
-        <div class="role">IT Team Lead &amp; Systems Specialist</div>
-        <p class="tagline">I build identity, security, and infrastructure systems that scale with a company, not against it.</p>
+        <div class="role">IT Systems &amp; Applications Lead</div>
+        <p class="tagline">I build identity, security, and infrastructure systems that scale with a company — not against it. Currently leading IT operations and a 950+ employee laptop transition through the Autodesk acquisition.</p>
 
         <div class="quick-stats reveal">
           <div class="stat"><div class="num">14+</div><div class="label">Years in IT</div></div>
@@ -887,8 +902,8 @@
         </div>
 
         <div class="hero-actions reveal delay-1">
-          <a class="btn-solid resume-download" href="Joseph_Gad_Resumes.zip" download>Download Resumes (ZIP)</a>
-          <span class="btn-caption">English &amp; French, ATS and designed formats</span>
+          <a class="btn-solid resume-download" href="Joseph_Gad_Resume.pdf" download>Download Resume (PDF)</a>
+          <span class="btn-caption"><a href="Joseph_Gad_Resumes.zip" download>ATS versions &amp; French (ZIP)</a></span>
         </div>
       </div>
 
@@ -911,7 +926,7 @@
     </div>
     <div class="about-grid">
       <div class="reveal">
-        <p class="about-bio">I'm an <strong>IT Team Lead and Systems Specialist</strong> with over a decade of hands-on experience, starting with hardware repair and working my way up to leading identity, security, and infrastructure strategy for fast-scaling companies. That path took me from fixing devices at Microbytes and hosting new-Mac-buyer onboarding sessions at Apple, through help desk and systems administration roles, to leading IT teams across Canada and the US. I care about building IT systems that scale with a company, not against it: automating the repetitive, securing the essentials, and giving teams tools that get out of their way. I work daily across English, French, Armenian, and Arabic, which comes in handy supporting distributed teams. Outside of work, I run an extensive home lab (virtualization, networking, self-hosted AI) because I like understanding infrastructure from the ground up, not just administering it.</p>
+        <p class="about-bio">I'm an <strong>IT Systems &amp; Applications Lead</strong> with 14+ years of hands-on experience — starting with hardware repair at Microbytes and Apple, and working my way up through help desk and systems administration to leading identity, security, and infrastructure for fast-scaling companies in Canada and the US. At MaintainX I joined as roughly the 350th employee and grew with the company toward 900+, leading identity infrastructure, device lifecycle management, and AI/SaaS governance, and building the IT department's structure from scratch. Since Autodesk's acquisition of MaintainX, I lead IT operations through the integration — software consolidation, onboarding/offboarding alignment, and a company-wide 950+ employee laptop transition. I care about building IT systems that scale with a company, not against it: automating the repetitive, securing the essentials, and giving teams tools that get out of their way. I work across English, French, Armenian, and Arabic, which helps with distributed teams. Outside of work, I run an extensive home lab (virtualization, networking, self-hosted AI) because I like understanding infrastructure from the ground up.</p>
       </div>
       <div class="about-side reveal delay-1">
         <h3>Languages</h3>
@@ -972,26 +987,111 @@
       <span class="idx">02</span>
       <h2>Experience</h2>
     </div>
+    <p class="section-sub reveal"><span class="ui-hint">Click a role to reveal its Key Initiatives, then click any initiative for its full context, actions, and impact. </span></p>
+
     <div class="accordion-controls reveal">
       <button class="btn-outline" onclick="toggleAll(true)">Expand All Projects</button>
       <button class="btn-outline" onclick="toggleAll(false)">Collapse All</button>
     </div>
 
     <div class="timeline">
-    <!-- MAINTAINX -->
+    <!-- AUTODESK -->
     <div class="timeline-item reveal">
       <div class="timeline-marker">
-        <span class="timeline-date">2024 – Present</span>
+        <span class="timeline-date">Aug 2026 – Present</span>
         <span class="timeline-dot"></span>
       </div>
       <details class="job" open>
       <summary class="job-head">
         <div>
-          <span class="job-title">IT Team Lead / Systems Specialist</span>
+          <span class="job-title">Principal Enterprise Systems &amp; Applications Analyst</span>
+          <span class="job-company">Autodesk</span>
+        </div>
+        <div class="job-head-side">
+          <div class="job-dates">Aug 2026 – Present</div>
+          <span class="job-chevron">+</span>
+        </div>
+      </summary>
+      <div class="job-body">
+      <div class="job-core">
+        <p>Following Autodesk's acquisition of MaintainX, I lead the IT department and maintain MaintainX's operating standards while we integrate with Autodesk: a company-wide laptop transition, software consolidation including identity integration, and alignment of IT processes with HR and Finance.</p>
+      </div>
+
+      <div class="projects-label">Key Initiatives — click to expand</div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Company-Wide Laptop Transition</span><span class="sub">950+ employees onto Autodesk-issued laptops</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Context</h4>
+          <ul>
+            <li>As part of the integration with Autodesk, every MaintainX employee moves onto an Autodesk-issued company laptop.</li>
+          </ul>
+          <h4>What I Did</h4>
+          <ul>
+            <li>Leading the transition for all 950+ employees.</li>
+            <li>~900 devices swapped to date; about 60% of replaced devices returned for wipe and cleaning.</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Software Consolidation &amp; Identity Architecture</span><span class="sub">Planning, strategy, and identity integration design</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Context</h4>
+          <ul>
+            <li>MaintainX and Autodesk run different software stacks and SaaS subscriptions, and identity is being aligned across the two environments.</li>
+          </ul>
+          <h4>What I Did</h4>
+          <ul>
+            <li>Own the project planning and strategize the approach for consolidating software across the two environments.</li>
+            <li>Architecting the identity integration design so it is done properly.</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">IT Operations Alignment</span><span class="sub">Hardware, access, and termination processes aligned to Autodesk standards</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <h4>Context</h4>
+          <ul>
+            <li>Day-to-day IT has to keep running for MaintainX employees while processes are aligned with Autodesk's.</li>
+          </ul>
+          <h4>What I Did</h4>
+          <ul>
+            <li>Coordinated with HR, IT, and Finance stakeholders to align our processes to Autodesk standards.</li>
+            <li>Established the hardware provisioning, access provisioning, and termination processes.</li>
+            <li>Lead the IT department and maintain MaintainX's operational standards.</li>
+          </ul>
+        </div></div>
+      </div>
+
+      </div>
+      </details>
+    </div>
+
+    <!-- MAINTAINX -->
+    <div class="timeline-item reveal">
+      <div class="timeline-marker">
+        <span class="timeline-date">Mar 2024 – Aug 2026</span>
+        <span class="timeline-dot"></span>
+      </div>
+      <details class="job" open>
+      <summary class="job-head">
+        <div>
+          <span class="job-title">Information Technology Team Lead</span>
           <span class="job-company">MaintainX</span>
         </div>
         <div class="job-head-side">
-          <div class="job-dates">2024 – Present</div>
+          <div class="job-dates">Mar 2024 – Aug 2026</div>
           <span class="job-chevron">+</span>
         </div>
       </summary>
@@ -1000,7 +1100,7 @@
         <p>Joined MaintainX as roughly its 350th employee and grew with the company toward 900+ employees. Led identity and security infrastructure, global device lifecycle management, AI/SaaS governance, and the department's organizational buildout from the ground up, while staying hands-on with day-to-day technical work. Here's what that looked like:</p>
       </div>
 
-      <div class="projects-label">Key Initiatives (click to expand)</div>
+      <div class="projects-label">Key Initiatives — click to expand</div>
 
       <div class="project">
         <button class="project-toggle" onclick="toggleProject(this)">
@@ -1014,12 +1114,12 @@
           <ul>
             <li>Audited the company's full SaaS estate (~180 applications, including ~20 internally-hosted tools) against SSO/SCIM support within our existing license tiers, then negotiated vendor tier upgrades to close the gaps that mattered</li>
             <li>Redesigned identity flow around OKTA, building RBAC-driven dynamic group provisioning by department, role, and location, with Hibob (our HRIS) as the identity source-of-truth</li>
-            <li>Implemented SCIM provisioning for a cleaner, automated user lifecycle process, and deployed push-group provisioning for SaaS applications that supported it, running OKTA and Google Groups in parallel to keep native Workspace integrations (Drive sharing, etc.) working seamlessly</li>
+            <li>Implemented SCIM provisioning for a cleaner, automated user lifecycle process, and deployed push-group provisioning for SaaS applications that supported it — running OKTA and Google Groups in parallel to keep native Workspace integrations (Drive sharing, etc.) working seamlessly</li>
             <li>Completed a company-wide SSO rollout across both Google Workspace and OKTA over roughly a year with zero operational disruption</li>
-            <li>Evaluated our SaaS-management tooling as part of the same audit and moved from Torii to 1Password's SaaS Manager (formerly Trelica) after finding Torii's OKTA/SCIM integration unreliable, for the same cost but a meaningfully better feature set</li>
+            <li>Evaluated our SaaS-management tooling as part of the same audit and moved from Torii to 1Password's SaaS Manager (formerly Trelica) after finding Torii's OKTA/SCIM integration unreliable — same cost, meaningfully better feature set</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Delivered easier and more secure authentication for every employee by cutting the number of separate accounts and passwords they had to track in password managers, simplifying day-to-day login workflows. Scaled OKTA to manage and oversee <strong>180+ SaaS applications</strong> company-wide under stronger, centralized identity management. The same license-tier audit also surfaced rarely-used seats to cut: <strong>~$50K saved</strong> from an Atlassian license cleanup alone, with a similar pass on Figma.</li></ul>
+          <ul><li>Delivered easier and more secure authentication for every employee by cutting the number of separate accounts and passwords they had to track in password managers, simplifying day-to-day login workflows. Scaled OKTA to manage and oversee <strong>180+ SaaS applications</strong> company-wide under stronger, centralized identity management. The same license-tier audit also surfaced rarely-used seats to cut — <strong>~$50K saved</strong> from an Atlassian license cleanup alone, with a similar pass on Figma.</li></ul>
         </div></div>
       </div>
 
@@ -1030,7 +1130,7 @@
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>The fleet's existing SentinelOne deployment needed to move to CrowdStrike for stronger endpoint detection and response coverage, without leaving orphaned agents or conflicts behind on devices mid-migration, across a fleet of roughly <strong>600 endpoints</strong> (450 Mac / 130 Windows / 20 Linux) with a lean 3-person IT team.</li></ul>
+          <ul><li>The fleet's existing SentinelOne deployment needed to move to CrowdStrike for stronger endpoint detection and response coverage, without leaving orphaned agents or conflicts behind on devices mid-migration — across a fleet of roughly <strong>600 endpoints</strong> (450 Mac / 130 Windows / 20 Linux) with a lean 3-person IT team.</li></ul>
           <h4>What I Did</h4>
           <ul>
             <li>Built a custom Python script to cleanly uninstall and remap the prior SentinelOne agent during cutover, avoiding conflicts and orphaned installs across the fleet</li>
@@ -1049,16 +1149,16 @@
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>The company's legacy Miradore MDM no longer fit its Windows endpoint management needs as the fleet scaled, and never supported Linux at all, requiring a fresh evaluation of the right tool per platform.</li></ul>
+          <ul><li>The company's legacy Miradore MDM no longer fit its Windows endpoint management needs as the fleet scaled, and never supported Linux at all — requiring a fresh evaluation of the right tool per platform.</li></ul>
           <h4>What I Did</h4>
           <ul>
-            <li>Ran a proof-of-concept evaluating Microsoft Intune for Windows/Linux endpoint management; rejected it on cost and performance, and migrated the fleet (~130 devices) from Miradore to NinjaOne instead, extending managed coverage to Linux devices for the first time</li>
+            <li>Ran a proof-of-concept evaluating Microsoft Intune for Windows/Linux endpoint management; rejected it on cost and performance, and migrated the fleet (~130 devices) from Miradore to NinjaOne instead — extending managed coverage to Linux devices for the first time</li>
             <li>Kept Apple device management on its own dedicated path via Apple Business Manager and Kandji/Iru MDM rather than forcing a single cross-platform tool</li>
             <li>Wrote Python and Bash install scripts, deployed through MDM, to apply RBAC-tailored desktop restrictions (standard vs. administrator accounts) and standardize system configuration across the fleet at scale</li>
             <li>Built an AutoPkg → Kandji Self Service pipeline to keep internally-hosted and common third-party macOS apps current, letting end users self-serve installs on demand instead of manual re-packaging per update</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Right-sized MDM per platform instead of one ill-fitting tool for everything, closing a real coverage gap on Linux, while standardizing security configuration and account-restriction policy fleet-wide through scripted, MDM-deployed automation.</li></ul>
+          <ul><li>Right-sized MDM per platform instead of one ill-fitting tool for everything — closing a real coverage gap on Linux — while standardizing security configuration and account-restriction policy fleet-wide through scripted, MDM-deployed automation.</li></ul>
         </div></div>
       </div>
 
@@ -1069,15 +1169,15 @@
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>Windows updates and hardware were causing frequent disruption for end users: high failure rates, slow new-hire provisioning, and battery/performance that lagged well behind Mac hardware at the same price point. Rather than just push an opinion, I built the actual business case.</li></ul>
+          <ul><li>Windows updates and hardware were causing frequent disruption for end users — high failure rates, slow new-hire provisioning, and battery/performance that lagged well behind Mac hardware at the same price point. Rather than just push an opinion, I built the actual business case.</li></ul>
           <h4>What I Did</h4>
           <ul>
-            <li>Authored and presented a formal proposal backed by third-party benchmark data: battery-life and performance-per-watt comparisons across MacBook Pro M4/M3/M2 generations against comparable Windows ultrabooks and gaming laptops</li>
+            <li>Authored and presented a formal proposal backed by third-party benchmark data — battery-life and performance-per-watt comparisons across MacBook Pro M4/M3/M2 generations against comparable Windows ultrabooks and gaming laptops</li>
             <li>Laid out Windows' concrete drawbacks (setup time, performance/stability issues, driver support, battery life) alongside the one legitimate limitation to standardizing on Mac: Finance's Excel/pivot-table workflows, which are only fully reliable on Windows x86 Excel</li>
-            <li>Evaluated two virtualization paths to close that gap: UTM (free/open-source, but no GPU virtualization) and Parallels (paid, ARM-native with GPU acceleration, Coherence mode, and centralized deployment via Kandji), and rolled out Parallels for the Finance holdouts</li>
+            <li>Evaluated two virtualization paths to close that gap — UTM (free/open-source, but no GPU virtualization) and Parallels (paid, ARM-native with GPU acceleration, Coherence mode, and centralized deployment via Kandji) — and rolled out Parallels for the Finance holdouts</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Took the company from a majority-Windows environment to roughly <strong>~40 Windows workstations out of ~900 employees</strong> (a ~95%+ Apple-standard fleet) while giving the remaining Windows-dependent users a fully supported path via virtualization rather than leaving them behind.</li></ul>
+          <ul><li>Brought the fleet to roughly <strong>~40 Windows workstations out of ~900 employees</strong> — a ~95%+ Apple-standard fleet — while giving the remaining Windows-dependent users a fully supported path via virtualization rather than leaving them behind.</li></ul>
         </div></div>
       </div>
 
@@ -1088,7 +1188,7 @@
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>Led the rollout of OpenAI's Enterprise ChatGPT company-wide in September 2025, a straightforward deployment given the simpler AI landscape at the time. As Anthropic's Claude AI suite matured, its agentic and self-hosting capabilities (Claude Code, custom skills, MCP integrations) started expanding fast enough that informal usage could no longer scale safely on its own. Rather than wait for an incident, I got ahead of it: partnering with Security to build a real governance layer before opening the tools further.</li></ul>
+          <ul><li>Led the rollout of OpenAI's Enterprise ChatGPT company-wide in September 2025, a straightforward deployment given the simpler AI landscape at the time. As Anthropic's Claude AI suite matured, its agentic and self-hosting capabilities — Claude Code, custom skills, MCP integrations — started expanding fast enough that informal usage could no longer scale safely on its own. Rather than wait for an incident, I got ahead of it: partnering with Security to build a real governance layer before opening the tools further.</li></ul>
           <h4>What I Did</h4>
           <ul>
             <li>Configured the full enterprise stack around the Claude AI suite rollout: OKTA identity, push groups, governance policy, and RBAC scoped per module (Code / AI / Design / Cowork) rather than blanket access, containing IP/client-data exposure risk before company-wide rollout</li>
@@ -1097,7 +1197,7 @@
             <li>Took ownership of internal support documentation, keeping it constantly updated and accurate as the tools evolved</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Established a proactive AI/SaaS governance framework, built ahead of the risk curve rather than in response to an incident, covering identity, module-scoped access, and MCP/connector vetting, letting the company adopt powerful new AI tooling quickly without compromising security.</li></ul>
+          <ul><li>Established a proactive AI/SaaS governance framework — built ahead of the risk curve rather than in response to an incident — covering identity, module-scoped access, and MCP/connector vetting, letting the company adopt powerful new AI tooling quickly without compromising security.</li></ul>
         </div></div>
       </div>
 
@@ -1111,14 +1211,14 @@
           <ul><li>Sourcing and retrieving hardware for a handful of remote employees scattered across international sites was a real pain point: device availability got dramatically harder during the AI-datacenter-driven hardware component shortage, and getting equipment back after offboarding was its own recurring headache.</li></ul>
           <h4>What I Did</h4>
           <ul>
-            <li>Adopted Growrk as an à la carte device procurement, warehousing, and reverse-logistics service: a deliberate choice over deeper (e.g. HRIS-integrated) automation, since international hiring volume never justified building that out; hiring was concentrated mostly in Canada and the US, with occasional hires abroad</li>
+            <li>Adopted Growrk as an à la carte device procurement, warehousing, and reverse-logistics service — a deliberate choice over deeper (e.g. HRIS-integrated) automation, since international hiring volume never justified building that out; hiring was concentrated mostly in Canada and the US, with occasional hires abroad</li>
             <li>Used Growrk's warehousing to hold pre-positioned stock and route around the AI-driven hardware shortage, rather than reacting order-by-order as new hires came in</li>
             <li>Leaned on Growrk's factory wipe/cleaning and bench-testing service to solve device retrieval and re-provisioning after offboarding, instead of chasing down and manually refurbishing returned hardware</li>
             <li>Built a full Apple device enrollment pipeline via Apple Business Manager integration with Iru (Kandji, rebranded) MDM, auto-populating asset records and syncing device health/ownership through the device lifecycle</li>
             <li>Delivered hardware refresh and onboarding procurement for remote employees across Kazakhstan, Argentina, Switzerland, Colombia, Ukraine, and the Philippines</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Kept hardware continuity intact through a genuine industry-wide component shortage via pre-positioned inventory, and turned device retrieval/offboarding from a manual chase into a standard reverse-logistics workflow, without over-building automation the hiring volume didn't call for.</li></ul>
+          <ul><li>Kept hardware continuity intact through a genuine industry-wide component shortage via pre-positioned inventory, and turned device retrieval/offboarding from a manual chase into a standard reverse-logistics workflow — without over-building automation the hiring volume didn't call for.</li></ul>
         </div></div>
       </div>
 
@@ -1138,7 +1238,7 @@
             <li>Carried the project through several months of sustained follow-through to completion and announced it to the full team</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Delivered the department's first defined organizational structure, growing the team from <strong>2 to 6 technicians</strong> (1 Junior, 3 Intermediate, 2 Senior) with a clear path for advancement, all reporting up through me to the Director of IT &amp; Security.</li></ul>
+          <ul><li>Delivered the department's first defined organizational structure — growing the team from <strong>2 to 6 technicians</strong> (1 Junior, 3 Intermediate, 2 Senior) with a clear path for advancement, all reporting up through me to the Director of IT &amp; Security.</li></ul>
         </div></div>
       </div>
 
@@ -1152,7 +1252,7 @@
           <ul><li>Balancing individual contributor work, people management, onboarding, project management, and cross-department coordination at once meant deliberately evolving how the role was run.</li></ul>
           <h4>What I Did</h4>
           <ul>
-            <li>Took on full IT manager responsibilities, setting direction and building structure for the team, while staying hands-on and technical rather than moving to a purely managerial layer</li>
+            <li>Took on full IT manager responsibilities — setting direction and building structure for the team — while staying hands-on and technical rather than moving to a purely managerial layer</li>
             <li>Delegated ownership of a full 1Password-to-OKTA SSO migration to a direct report rather than running it personally, and it was delivered successfully</li>
             <li>Directly trained and coached new and existing team members, staying close to the technical work while building their capability</li>
           </ul>
@@ -1196,7 +1296,7 @@
             <li>Ran a proof-of-concept evaluation of a Fortinet network stack for the company's networking hardware, carried through to a documented recommendation</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Delivered leadership clear, evidence-based recommendations on both fronts, extending networking experience that spans Cisco Meraki (Leap Event Technology), Ubiquiti UniFi and Fortinet (MaintainX), WatchGuard, and a self-built home lab environment (pfSense, WireGuard, OpenVPN).</li></ul>
+          <ul><li>Delivered leadership clear, evidence-based recommendations on both fronts — extending networking experience that spans Cisco Meraki (Leap Event Technology), Ubiquiti UniFi and Fortinet (MaintainX), WatchGuard, and a self-built home lab environment (pfSense, WireGuard, OpenVPN).</li></ul>
         </div></div>
       </div>
 
@@ -1207,11 +1307,11 @@
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>MaintainX's own product is a CMMS built for physical maintenance operations, not IT asset or service management, but the underlying platform was flexible enough to repurpose for both, avoiding the cost of a separate third-party tool.</li></ul>
+          <ul><li>MaintainX's own product is a CMMS built for physical maintenance operations, not IT asset or service management — but the underlying platform was flexible enough to repurpose for both, avoiding the cost of a separate third-party tool.</li></ul>
           <h4>What I Did</h4>
           <ul>
             <li>Built custom automations and configurations to run the department's asset &amp; inventory tracking on MaintainX's own product</li>
-            <li>Stood up an internal ITSM/help desk platform on the same product, covering onboarding, support, and asset/inventory in one place, with custom automation and Slack integrations for ticketing workflows</li>
+            <li>Stood up an internal ITSM/help desk platform on the same product — covering onboarding, support, and asset/inventory in one place — with custom automation and Slack integrations for ticketing workflows</li>
           </ul>
           <h4>Impact</h4>
           <ul><li>Avoided licensing a separate third-party ITSM/asset tool entirely, while demonstrating the internal product expertise to turn a non-standard tool into the department's core operating platform.</li></ul>
@@ -1245,7 +1345,7 @@
         </ul>
       </div>
 
-      <div class="projects-label">Key Initiatives (click to expand)</div>
+      <div class="projects-label">Key Initiatives — click to expand</div>
 
       <div class="project">
         <button class="project-toggle" onclick="toggleProject(this)">
@@ -1262,18 +1362,18 @@
             <li>Replicated every mailbox and Drive, and disabled (rather than deleted) legacy accounts once migrated, retaining them for audit and recovery purposes</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Consolidated 8 fragmented directories into one clean, audit-safe Google Workspace tenant over 3-4 months; migration load times were the real bottleneck, not the plan itself.</li></ul>
+          <ul><li>Consolidated 8 fragmented directories into one clean, audit-safe Google Workspace tenant over 3-4 months — migration load times were the real bottleneck, not the plan itself.</li></ul>
         </div></div>
       </div>
 
       <div class="project">
         <button class="project-toggle" onclick="toggleProject(this)">
           <span class="chevron">+</span>
-          <span><span class="main-line">Help Desk Rebuild: Atlassian Jira Service Management</span><span class="sub">Replaced legacy ticketing system</span></span>
+          <span><span class="main-line">Help Desk Rebuild — Atlassian Jira Service Management</span><span class="sub">Replaced legacy ticketing system</span></span>
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>Before this, there was no formal help desk system at all: a single technician fielded support requests ad hoc over Slack for the whole company.</li></ul>
+          <ul><li>Before this, there was no formal help desk system at all — a single technician fielded support requests ad hoc over Slack for the whole company.</li></ul>
           <h4>What I Did</h4>
           <ul>
             <li>Implemented Jira Service Management as the new company-wide help desk platform</li>
@@ -1292,26 +1392,23 @@
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>Served as the lead IT representative during a full company rebrand: a coordinated, company-wide identity and systems change spanning internal tools, client-facing platforms, and public presence.</li></ul>
+          <ul><li>Served as the lead IT representative during a full company rebrand.</li></ul>
           <h4>What I Did</h4>
           <ul>
-            <li>Migrated domains, email, and branded assets across every SaaS platform the company hosted, updating each for the new company name, domain, and branding</li>
-            <li>Updated SSO/login branding and coordinated the technical cutover with Marketing and leadership</li>
-            <li>Timed major changes (like the rebrand announcement itself) around Marketing's communication plan to internal teams, clients, and the public</li>
+            <li>Migrated domains, email, and branded assets across</li>
+            <li>Updated SSO/login branding and coordinated technical cutover with marketing and leadership</li>
           </ul>
-          <h4>Impact</h4>
-          <ul><li>Delivered a fairly seamless cutover with no disruption to internal teams, clients, or public-facing services, timed precisely around Marketing's own communication rollout.</li></ul>
         </div></div>
       </div>
 
       <div class="project">
         <button class="project-toggle" onclick="toggleProject(this)">
           <span class="chevron">+</span>
-          <span><span class="main-line">Onsite Activation Support: UFC International Fight Week</span><span class="sub">Live event technology deployment</span></span>
+          <span><span class="main-line">Onsite Activation Support — UFC International Fight Week</span><span class="sub">Live event technology deployment</span></span>
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>Provided onsite IT/event-technology support for the UFC International Fight Week fan expo, a high-visibility, zero-downtime-tolerance live event running Friday and Saturday.</li></ul>
+          <ul><li>Provided onsite IT/event-technology support for the UFC International Fight Week fan expo — a high-visibility, zero-downtime-tolerance live event running Friday and Saturday.</li></ul>
           <h4>What I Did</h4>
           <ul>
             <li>Supported the registration line and meet-and-greet technology for the 2-day fan expo</li>
@@ -1348,7 +1445,7 @@
         </button>
         <div class="project-body"><div class="project-body-inner">
           <h4>Context</h4>
-          <ul><li>Company lacked a formal device management platform for its Apple fleet: new Macs were imaged manually from a USB key, one at a time.</li></ul>
+          <ul><li>Company lacked a formal device management platform for its Apple fleet — new Macs were imaged manually from a USB key, one at a time.</li></ul>
           <h4>What I Did</h4>
           <ul>
             <li>Deployed JAMF Pro as the company's MDM platform, connected to Apple Business Manager for zero-touch DEP enrollment</li>
@@ -1356,27 +1453,10 @@
             <li>Used JAMF for ongoing app deployment, patch management, and fleet inventory tracking</li>
           </ul>
           <h4>Impact</h4>
-          <ul><li>Cut new-hire device setup from <strong>30-60 minutes</strong> of manual USB-key imaging down to <strong>10-15 minutes</strong> of zero-touch provisioning, laying the groundwork later extended to Kandji/Iru at MaintainX.</li></ul>
+          <ul><li>Cut new-hire device setup from <strong>30-60 minutes</strong> of manual USB-key imaging down to <strong>10-15 minutes</strong> of zero-touch provisioning — and laid the groundwork later extended to Kandji/Iru at MaintainX.</li></ul>
         </div></div>
       </div>
 
-      <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
-          <span class="chevron">+</span>
-          <span><span class="main-line">Post-COVID Company Restructuring Support</span><span class="sub">IT operations through hybrid transition</span></span>
-        </button>
-        <div class="project-body"><div class="project-body-inner">
-          <h4>Context</h4>
-          <ul><li>Supported IT operations through a severe company contraction coming out of COVID-19's disruption to the live-events industry, compounded by the IT director departing mid-transition, which left me to step up and rebuild the team's leadership from within.</li></ul>
-          <h4>What I Did</h4>
-          <ul>
-            <li>Stepped up into the IT leadership role after the director's departure, taking on senior responsibilities while rebuilding the team's structure from within</li>
-            <li>Re-provisioned and recovered equipment as headcount contracted sharply, while standing up the tooling and security policy needed for a fully remote workforce</li>
-          </ul>
-          <h4>Impact</h4>
-          <ul><li>Navigated the company's contraction from <strong>~500 to ~100 employees</strong> (IT from <strong>5 to 3</strong>) while transitioning the entire company to full-remote operations, stepping into the vacated IT leadership role and keeping the department running through the most disruptive period in the company's history.</li></ul>
-        </div></div>
-      </div>
       </div>
       </details>
     </div>
@@ -1420,7 +1500,7 @@
 
         <details class="simple-job" open>
           <summary class="job-head">
-            <div><span class="job-title">Family Room Specialist</span><span class="job-company">Apple</span></div>
+            <div><span class="job-title">Genius</span><span class="job-company">Apple</span></div>
             <div class="job-head-side">
               <div class="job-dates">2014 – 2016</div>
               <span class="job-chevron">+</span>
@@ -1428,8 +1508,9 @@
           </summary>
           <div class="simple-job-body">
           <ul>
-            <li>Hosted one-on-one onboarding sessions with first-time Mac buyers, walking them through personal setup and getting comfortable with their new device</li>
-            <li>Repaired Mac and iOS devices, provided MacOS/iOS software support, and coordinated the Genius Bar queue to meet client needs within SLA</li>
+            <li>Hosted one-on-one onboarding sessions with first-time Mac buyers</li>
+            <li>Repaired Mac and iOS devices; provided MacOS/iOS software support</li>
+            <li>Coordinated the Genius Bar queue to meet client needs within SLA</li>
           </ul>
           </div>
         </details>
@@ -1466,37 +1547,37 @@
         <div class="cert-index">01</div>
         <div class="cert-name">Okta Certified Admin</div>
         <div class="cert-issuer">Okta Certified Administrator</div>
-        <div class="cert-years">2023 – 2026</div>
+        <div class="cert-years">Valid through 2026</div>
       </div>
       <div class="cert">
         <div class="cert-index">02</div>
         <div class="cert-name">Microsoft Certified Admin</div>
         <div class="cert-issuer">Microsoft Certified Administrator</div>
-        <div class="cert-years">2017 – 2020</div>
+        <div class="cert-years">Since 2017</div>
       </div>
       <div class="cert">
         <div class="cert-index">03</div>
         <div class="cert-name">Google Workspace Admin</div>
         <div class="cert-issuer">Google Certified Administrator</div>
-        <div class="cert-years">2019 – 2023</div>
+        <div class="cert-years">Since 2019</div>
       </div>
       <div class="cert">
         <div class="cert-index">04</div>
         <div class="cert-name">Kandji/Iru Certified Admin</div>
         <div class="cert-issuer">KANDJI Certified Administrator</div>
-        <div class="cert-years">2023 – 2026</div>
+        <div class="cert-years">Valid through 2026</div>
       </div>
       <div class="cert">
         <div class="cert-index">05</div>
         <div class="cert-name">JAMF Certified Admin</div>
         <div class="cert-issuer">JAMF SUITE Administrator</div>
-        <div class="cert-years">2020 – 2023</div>
+        <div class="cert-years">Since 2020</div>
       </div>
       <div class="cert">
         <div class="cert-index">06</div>
         <div class="cert-name">Apple Certified Technician</div>
         <div class="cert-issuer">Apple Certified Technician</div>
-        <div class="cert-years">2015 – 2017</div>
+        <div class="cert-years">Since 2015</div>
       </div>
     </div>
   </div>
@@ -1509,18 +1590,18 @@
       <span class="idx">04</span>
       <h2>Projects | Home Lab</h2>
     </div>
+    <p class="section-sub ui-hint reveal">Click any card to expand it.</p>
 
     <div class="lab-grid">
       <div class="project reveal">
         <button class="project-toggle" onclick="toggleProject(this)">
           <span class="chevron">+</span>
-          <span><span class="main-line">Virtualization Server</span><span class="sub">Proxmox hypervisor</span></span>
+          <span><span class="main-line">Virtualization Servers</span><span class="sub">Three Proxmox nodes</span></span>
         </button>
         <div class="project-body"><div class="project-body-inner">
           <ul>
-            <li>Hosting an open-source NAS platform (TrueNAS Scale)</li>
-            <li>Running full graphics-accelerated Windows/Linux/Mac environments</li>
-            <li>Running home automation (Home Assistant) services across multiple Debian containers</li>
+            <li>Run three Proxmox nodes: one with a 12th-gen Intel i9 and RTX 3080 passthrough for GPU-accelerated Windows, Linux, and Mac VMs, a second 44-thread, 94 GB host for macOS, Windows, Android TV, and storage VMs, and a compact iKOOLCORE R2 Max dedicated to the firewall and a second NAS</li>
+            <li>Home Assistant home automation running across multiple Debian containers</li>
           </ul>
         </div></div>
       </div>
@@ -1528,14 +1609,13 @@
       <div class="project reveal delay-1">
         <button class="project-toggle" onclick="toggleProject(this)">
           <span class="chevron">+</span>
-          <span><span class="main-line">Home Network</span><span class="sub">pfSense / Proxmox hypervisor</span></span>
+          <span><span class="main-line">Storage &amp; Backup</span><span class="sub">TrueNAS SCALE</span></span>
         </button>
         <div class="project-body"><div class="project-body-inner">
           <ul>
-            <li>Configured a virtualized instance of the open-source pfSense firewall</li>
-            <li>Built out gigabit+ WAN with a software-defined switch using 10gb and 2.5gb network cards</li>
-            <li>Configured a private VPN using the WireGuard protocol</li>
-            <li>Set up a public VPN using the OpenVPN protocol hosted via NordVPN</li>
+            <li>Primary NAS: TrueNAS SCALE VM with a RAIDZ2 pool and encrypted datasets</li>
+            <li>Snapshots every 6 hours, kept for 4 weeks, protecting the notes vault; a second NAS runs on the firewall node</li>
+            <li>Docker apps for device sync (Syncthing) and a vector database (Qdrant) that powers semantic search</li>
           </ul>
         </div></div>
       </div>
@@ -1543,12 +1623,15 @@
       <div class="project reveal">
         <button class="project-toggle" onclick="toggleProject(this)">
           <span class="chevron">+</span>
-          <span><span class="main-line">Self-Hosted AI Environment</span><span class="sub">Educational AI workflow testing</span></span>
+          <span><span class="main-line">Home Network</span><span class="sub">pfSense firewall</span></span>
         </button>
         <div class="project-body"><div class="project-body-inner">
           <ul>
-            <li>Self-hosting open-source AI tools for educational purposes and testing modern AI workflows (e.g., OpenClaw)</li>
-            <li>Built automation workflows for finance-related workloads using OpenClaw and Alpaca, running risk measurement and chart analytics based on trends and political/market events, with safeguards to manage downside risk</li>
+            <li>pfSense firewall virtualized on its own dedicated Proxmox node (iKOOLCORE R2 Max), on a PPPoE WAN over a VLAN with a gigabit+ connection</li>
+            <li>Software-defined switch built on 10GbE and 2.5GbE network cards</li>
+            <li>Network-wide DNS filtering with AdGuard Home</li>
+            <li>Private VPN on WireGuard, plus a public VPN on OpenVPN through NordVPN</li>
+            <li>Regular configuration audits with a written action plan</li>
           </ul>
         </div></div>
       </div>
@@ -1556,12 +1639,44 @@
       <div class="project reveal delay-1">
         <button class="project-toggle" onclick="toggleProject(this)">
           <span class="chevron">+</span>
-          <span><span class="main-line">Gaming Server</span><span class="sub">Windows / Proxmox</span></span>
+          <span><span class="main-line">AI Agent Setup (Hermes)</span><span class="sub">Local-first personal agent with persistent skills and memory</span></span>
         </button>
         <div class="project-body"><div class="project-body-inner">
           <ul>
-            <li>Custom Windows 11 Pro build (ReviOS)</li>
-            <li>Configured remote game streaming (Apollo) for console-like play via the Moonlight Remote Client from any device, locally or remotely</li>
+            <li>Deployed Hermes Agent, an open-source AI agent framework, on macOS with Claude as the primary model</li>
+            <li>Local-first routing: on-device open models handle routine work at no cost, and paid frontier models are reserved for hard reasoning and review</li>
+            <li>Three role-based bots: a homelab operator (read-only by default, asks before changes), a notes librarian, and an architect that reviews risky changes before they run</li>
+            <li>Persistent memory and reusable skills, plus a notes vault synced to the NAS with semantic search (local embedding model and Qdrant)</li>
+            <li>Built with it: the HomeDash iPad app, a custom Android TV launcher, and a personal fork of an open-source macOS browser</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="project reveal">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">HomeDash</span><span class="sub">Native SwiftUI smart-home dashboard for iPad Pro</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <img class="project-shot" src="homedash.jpg" alt="HomeDash on iPad Pro: lights by room on the left, weather and top news on the right">
+          <ul>
+            <li>Built a native SwiftUI app for a 13&quot; iPad Pro and installed it with a developer account, designed to stay open as an always-on display</li>
+            <li>Apple Home lights by room through HomeKit: tap to toggle, drag to dim, hold to rearrange, tap a room to switch it all, with live updates</li>
+            <li>Dark OLED look inspired by StandBy and Apple Watch widgets, with weather (hourly and 5-day), top headlines (CBC and BBC feeds), and battery levels</li>
+          </ul>
+        </div></div>
+      </div>
+
+      <div class="project reveal delay-1">
+        <button class="project-toggle" onclick="toggleProject(this)">
+          <span class="chevron">+</span>
+          <span><span class="main-line">Media, Theater &amp; Gaming</span><span class="sub">Plex, projector, and Windows gaming VM</span></span>
+        </button>
+        <div class="project-body"><div class="project-body-inner">
+          <ul>
+            <li>Plex media server running in a macOS virtual machine</li>
+            <li>Epson LS800 projector as the Android TV device, running a custom Apple TV-style launcher with D-pad navigation and focus animations</li>
+            <li>Custom Windows 11 Pro build (ReviOS) on Proxmox with Apollo and Moonlight for console-like game streaming, locally or remotely</li>
           </ul>
         </div></div>
       </div>
@@ -1592,13 +1707,14 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         linkedin.com/in/joeygad
       </a>
-      <a class="contact-link resume-download" href="Joseph_Gad_Resumes.zip" download>
+      <a class="contact-link resume-download" href="Joseph_Gad_Resume.pdf" download>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
-        Download Resumes (ZIP)
+        Download Resume (PDF)
       </a>
     </div>
 
     <div class="footer-bottom">
+      <div class="footer-note"><span class="ui-hint">Click a role in Experience to reveal its Key Initiatives, or any Key Initiatives / Home Lab row to expand it further — everything expands automatically when printing or exporting to PDF.</span></div>
       <div>&copy; 2026 Joseph Gad</div>
     </div>
   </div>
@@ -1636,7 +1752,7 @@
   });
 
   // ---- scroll-spy via IntersectionObserver ----
-  var sectionIds = ['home','about','experience','projects','contact'];
+  var sectionIds = ['home','about','experience','certifications','projects','contact'];
   var navMap = {};
   navLinks.querySelectorAll('a[data-nav]').forEach(function(a){
     navMap[a.getAttribute('data-nav')] = a;
