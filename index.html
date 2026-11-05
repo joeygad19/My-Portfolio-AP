@@ -1,1007 +1,529 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Joseph Gad — IT Systems &amp; Applications Lead</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Joseph Gad — IT Operations, Systems &amp; Applications Lead</title>
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="IT Operations, Systems &amp; Applications Lead with 14+ years in identity (Okta), Apple and endpoint management (Kandji/Iru, JAMF), IT security and team leadership. Based in Montreal.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Joseph Gad — IT Operations, Systems &amp; Applications Lead">
+<meta property="og:description" content="IT Operations, Systems &amp; Applications Lead with 14+ years in identity (Okta), Apple and endpoint management (Kandji/Iru, JAMF), IT security and team leadership. Based in Montreal.">
+<meta property="og:image" content="https://joeygad19.github.io/My-Portfolio-AP/profile.png">
+<meta property="og:locale" content="en_CA">
+<meta name="twitter:card" content="summary">
+<link rel="alternate" hreflang="en" href="index.html">
+<link rel="alternate" hreflang="fr" href="index_fr.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23b04a35%22/%3E%3Ctext%20x%3D%2232%22%20y%3D%2242%22%20font-family%3D%22Helvetica%2CArial%2Csans-serif%22%20font-size%3D%2226%22%20font-weight%3D%22700%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EJG%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#f7f5f0">
+
+<script>try{var t=localStorage.getItem('jg-theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t);}catch(e){}document.documentElement.className='js';</script>
 <style>
-  :root{
-    --red:#c0392b;
-    --red-dark:#8f2a1e;
-    --black:#1a1a1a;
-    --black-soft:#242424;
-    --white:#ffffff;
-    --offwhite:#f4f2ee;
-    --gray:#6b6b6b;
-    --gray-light:#9a9a9a;
-    --border:#2c2c2c;
-    --border-light:#ddd8d0;
-    --serif-display: 'Arial Black', 'Helvetica Neue', Arial, sans-serif;
-    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+:root{--accent:#c0392b;--accent-on-dark:#e8604f;
+  --paper:#f7f5f0;--ink:#1a1a1a;--muted:#6a655e;
+  --surface:#ffffff;--surface-2:#f3f0e9;--line:#e6e1d6;--chip:#faf8f3;
+  --shadow:0 1px 2px rgba(60,50,30,.04),0 4px 14px rgba(60,50,30,.04);--shadow-h:0 2px 4px rgba(60,50,30,.05),0 8px 20px rgba(60,50,30,.07);
+  --accent-ink:#ffffff;--link:var(--accent);--btn-bg:var(--accent);--btn-fg:#fff;
+  --serif:"Iowan Old Style","Charter",Georgia,serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --r:16px;--gap:12px;--maxw:1180px}
+:root[data-theme="dark"]{
+  --paper:#141312;--ink:#efece6;--muted:#a8a29a;
+  --surface:#1c1b19;--surface-2:#23211f;--line:#34312d;--chip:#232120;--shadow:0 1px 2px rgba(0,0,0,.3);--shadow-h:0 4px 16px rgba(0,0,0,.35);
+  --link:var(--accent-on-dark);--btn-bg:var(--accent-on-dark);--btn-fg:#1a1a1a}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#141312;--ink:#efece6;--muted:#a8a29a;
+    --surface:#1c1b19;--surface-2:#23211f;--line:#34312d;--chip:#232120;--shadow:0 1px 2px rgba(0,0,0,.3);--shadow-h:0 4px 16px rgba(0,0,0,.35);
+    --link:var(--accent-on-dark);--btn-bg:var(--accent-on-dark);--btn-fg:#1a1a1a}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--link)}
+img{display:block;max-width:100%}
+h1,h2,h3,h4{margin:0;font-weight:600}
+ul{margin:0;padding:0}
 
-    /* theme-aware tokens (light = default brand look) */
-    --ink:var(--black);
-    --ink-soft:var(--gray);
-    --surface-base:var(--white);
-    --surface-alt:var(--offwhite);
-    --card-bg:var(--white);
-    --border-soft:var(--border-light);
-    --body-bg:var(--white);
-    --body-ink:var(--black);
-  }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    margin:0;
-    padding:0;
-    font-family:var(--sans);
-    color:var(--body-ink);
-    background:var(--body-bg);
-    line-height:1.55;
-    overflow-x:hidden;
-    transition:background .25s ease, color .25s ease;
-  }
-  @media (prefers-reduced-motion: reduce){
-    .reveal{transition:none !important;}
-    .scroll-cta .arrow{animation:none !important;}
-    html{scroll-behavior:auto;}
-  }
-  a{color:inherit;}
-  ul{margin:0;padding:0;}
-  .container{max-width:1200px;margin:0 auto;padding:0 32px;}
-  @media (max-width:600px){ .container{padding:0 20px;} }
+/* top bar */
+.topbar{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:var(--maxw);margin:0 auto;padding:0 20px;height:52px;display:flex;align-items:center;gap:20px}
+.mark{display:flex;align-items:center;gap:9px;text-decoration:none;color:var(--ink);font-weight:600;font-size:14px;letter-spacing:.01em}
+.sq{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;background:var(--ink);color:var(--paper);font:700 11px/1 var(--sans);letter-spacing:.04em}
+.topbar nav{display:flex;gap:4px;margin-left:12px}
+.topbar nav a{color:var(--muted);text-decoration:none;font-size:13.5px;padding:6px 10px;border-radius:8px}
+.topbar nav a:hover{color:var(--ink);background:var(--surface-2)}
+.topbar nav a.on{color:var(--link)}
+.top-actions{margin-left:auto;display:flex;align-items:center;gap:8px}
+.theme-btn{font:inherit;font-size:13px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}
+.theme-btn:hover{color:var(--ink);border-color:var(--muted)}
+.btn{display:inline-block;background:var(--btn-bg);color:var(--btn-fg);text-decoration:none;font-weight:600;font-size:14px;padding:10px 18px;border-radius:10px;transition:filter .15s,transform .15s}
+.btn:hover{filter:brightness(1.08)}
+.btn-sm{font-size:13px;padding:6px 14px;border-radius:8px}
+:focus-visible{outline:2px solid var(--link);outline-offset:2px;border-radius:6px}
 
-  /* ============ NAV ============ */
-  .site-nav{
-    position:sticky; top:0; z-index:1000;
-    background:var(--black);
-    border-bottom:3px solid var(--red);
-  }
-  .nav-inner{
-    max-width:1200px; margin:0 auto; padding:0 32px;
-    display:flex; align-items:center; justify-content:space-between;
-    height:66px;
-  }
-  .nav-mark{
-    display:flex; align-items:center; gap:8px;
-    font-weight:900; letter-spacing:1px; color:var(--white);
-    font-size:1.05rem; text-decoration:none;
-  }
-  .nav-mark .sq{
-    width:30px;height:30px;background:var(--red);
-    display:flex;align-items:center;justify-content:center;
-    color:var(--white); font-size:0.85rem; font-weight:900;
-    transform:rotate(-2deg);
-  }
-  .nav-links{
-    display:flex; gap:2px; list-style:none; margin:0; padding:0;
-  }
-  .nav-links a{
-    display:block;
-    color:var(--white);
-    text-decoration:none;
-    font-size:0.78rem;
-    font-weight:700;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    padding:10px 13px;
-    border-bottom:3px solid transparent;
-    transition:border-color .2s ease, color .2s ease, background .2s ease;
-  }
-  .nav-links a:hover{color:var(--red);}
-  .nav-links a.active{border-color:var(--red); color:var(--red);}
-  .hamburger{
-    display:none;
-    flex-direction:column;
-    justify-content:center;
-    gap:5px;
-    width:34px;height:34px;
-    background:none;border:none;cursor:pointer;
-    padding:0;
-  }
-  .hamburger span{
-    display:block; height:3px; width:100%;
-    background:var(--white); transition:transform .25s ease, opacity .25s ease;
-  }
-  .site-nav.open .hamburger span:nth-child(1){transform:translateY(8px) rotate(45deg);}
-  .site-nav.open .hamburger span:nth-child(2){opacity:0;}
-  .site-nav.open .hamburger span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+/* bento */
+.bento{max-width:var(--maxw);margin:0 auto;padding:16px 20px 8px;display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap)}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px;color:var(--ink);text-decoration:none;position:relative;overflow:hidden;min-width:0;box-shadow:var(--shadow);transition:border-color .18s,transform .18s,box-shadow .18s}
+.tile:hover{transform:translateY(-1px);box-shadow:var(--shadow-h)}
+a.tile:hover{border-color:var(--muted)}
+html.js .tile.rv{opacity:0;transform:translateY(8px);transition:opacity .6s ease var(--d,0s),transform .6s ease var(--d,0s),border-color .18s,box-shadow .18s}
+html.js .tile.rv.in{opacity:1;transform:none}
+html.js .tile.rv.in:hover{transform:translateY(-1px);transition-delay:0s}
+.eyebrow{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:10px}
+.tile h2{font-size:17px;line-height:1.3}
 
-  @media (max-width:900px){
-    .nav-links{
-      position:fixed; top:66px; left:0; right:0; bottom:0;
-      background:var(--black);
-      flex-direction:column;
-      gap:0;
-      padding:10px 0 40px;
-      transform:translateX(100%);
-      transition:transform .3s ease;
-      overflow-y:auto;
-    }
-    .site-nav.open .nav-links{transform:translateX(0);}
-    .nav-links a{
-      padding:18px 32px;
-      font-size:1rem;
-      border-bottom:1px solid #333;
-      border-left:4px solid transparent;
-    }
-    .nav-links a.active{border-left-color:var(--red); border-bottom-color:#333; color:var(--red);}
-    .hamburger{display:flex;}
-  }
+.t-name{grid-column:1/9;display:flex;flex-direction:column;padding:0}
+.t-name-main{padding:34px 38px 28px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.t-name h1{font:500 clamp(38px,4.6vw,56px)/1.02 var(--serif);letter-spacing:-.015em}
+.t-name .role{font:italic 400 20px/1.3 var(--serif);color:var(--muted);margin:10px 0 0}
+.t-name .tagline{margin:16px 0 0;max-width:56ch;font-size:15.5px;line-height:1.6;text-wrap:pretty}
+.actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin-top:24px}
+.link-quiet{padding:8px 0;font-size:13.5px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.link-quiet:hover{color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.stat{padding:16px 22px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:38px}
+.num{font:500 30px/1 var(--serif)}
+.lbl{font-size:12.5px;color:var(--muted);margin-top:5px}
 
-  /* ============ REVEAL ANIM ============ */
-  /* Content is visible by default. Only hide-then-fade-in when JS has
-     confirmed it's running (html.js) -- never gate visibility on JS alone. */
-  .reveal{
-    transition:opacity .7s ease, transform .7s ease;
-  }
-  html.js .reveal{opacity:0; transform:translateY(28px);}
-  html.js .reveal.in-view{opacity:1; transform:translateY(0);}
-  html.no-js .reveal{opacity:1 !important; transform:none !important;}
-  .reveal-stagger.in-view > *{}
-  .reveal.delay-1{transition-delay:.08s;}
-  .reveal.delay-2{transition-delay:.16s;}
-  .reveal.delay-3{transition-delay:.24s;}
+.t-photo{grid-column:9/13;padding:0;min-height:340px;background:var(--surface-2)}
+.t-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;position:absolute;inset:0}
 
-  /* ============ HERO ============ */
-  .hero{
-    position:relative;
-    background:var(--black);
-    color:var(--white);
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    overflow:hidden;
-    padding:120px 0 60px;
-  }
-  .hero-watermark{
-    position:absolute;
-    right:-4vw; top:50%; transform:translateY(-50%);
-    font-family:var(--serif-display);
-    font-size:min(46vw,620px);
-    font-weight:900;
-    color:rgba(255,255,255,0.035);
-    line-height:1;
-    z-index:0;
-    user-select:none;
-    pointer-events:none;
-    white-space:nowrap;
-  }
-  .hero-inner{position:relative; z-index:1;}
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.4fr 0.9fr;
-    gap:60px;
-    align-items:center;
-  }
-  @media (max-width:900px){
-    .hero-grid{grid-template-columns:1fr; gap:40px;}
-    .hero-photo{justify-self:center;}
-  }
-  .hero-photo{
-    display:flex; flex-direction:column; align-items:center; gap:16px;
-  }
-  .avatar-placeholder{
-    position:relative;
-    width:220px; height:220px;
-    border-radius:50%;
-    background:var(--black-soft);
-    border:3px solid var(--red);
-    outline:2px solid rgba(255,255,255,0.15);
-    outline-offset:6px;
-    display:flex; align-items:center; justify-content:center;
-    flex-shrink:0;
-    overflow:hidden;
-  }
-  @media (max-width:480px){
-    .avatar-placeholder{width:150px;height:150px;}
-  }
-  .avatar-photo{
-    width:100%; height:100%;
-    object-fit:cover;
-  }
-  .hero-actions{
-    display:flex; align-items:center; gap:16px; flex-wrap:wrap;
-    margin-top:36px;
-  }
-  .btn-solid{
-    display:inline-block;
-    background:var(--red);
-    color:var(--white);
-    border:none;
-    padding:15px 26px;
-    font-size:0.78rem;
-    font-weight:800;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
-    text-decoration:none;
-    cursor:pointer;
-    font-family:inherit;
-    transition:background .2s ease, transform .2s ease;
-  }
-  .btn-solid:hover{background:var(--red-dark);}
-  .btn-caption{
-    font-size:0.75rem; color:#999; font-style:italic;
-  }
-  .hero-eyebrow{
-    display:inline-flex; align-items:center; gap:10px;
-    color:var(--red); font-weight:800; letter-spacing:4px;
-    font-size:0.8rem; text-transform:uppercase; margin-bottom:20px;
-  }
-  .hero-eyebrow::before{
-    content:''; width:36px; height:3px; background:var(--red); display:inline-block;
-  }
-  .hero h1{
-    font-family:var(--serif-display);
-    font-weight:900;
-    font-size:clamp(3rem, 11vw, 8.5rem);
-    line-height:0.92;
-    letter-spacing:-2px;
-    margin:0 0 10px;
-    text-transform:uppercase;
-  }
-  .hero h1 .last{color:var(--red);}
-  .hero .role{
-    font-size:clamp(1rem,2.4vw,1.6rem);
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    color:var(--white);
-    margin:6px 0 22px;
-    border-left:5px solid var(--red);
-    padding-left:16px;
-    display:inline-block;
-  }
-  .hero .tagline{
-    max-width:640px;
-    font-size:1.15rem;
-    color:#cfcfcf;
-    margin:0 0 46px;
-  }
-  .quick-stats{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:0;
-    max-width:900px;
-  }
-  .quick-stats .stat{
-    padding:22px 20px 0 0;
-  }
-  .quick-stats .stat .num{
-    font-family:var(--serif-display);
-    font-weight:900;
-    font-size:clamp(1.8rem,4vw,2.8rem);
-    color:var(--red);
-    line-height:1;
-    margin-bottom:8px;
-  }
-  .quick-stats .stat .label{
-    font-size:0.7rem;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    color:#b5b5b5;
-    font-weight:600;
-  }
-  @media (max-width:700px){
-    .quick-stats{grid-template-columns:repeat(2,1fr); row-gap:26px;}
-  }
-  .scroll-cta{
-    position:absolute;
-    left:50%; bottom:28px; transform:translateX(-50%);
-    display:flex; flex-direction:column; align-items:center; gap:8px;
-    color:#999; text-decoration:none;
-    font-size:0.68rem; letter-spacing:2px; text-transform:uppercase;
-    z-index:1;
-  }
-  .scroll-cta .arrow{
-    width:14px;height:14px;
-    border-right:2px solid var(--red);
-    border-bottom:2px solid var(--red);
-    transform:rotate(45deg);
-    animation:bounce 1.8s infinite;
-  }
-  @keyframes bounce{
-    0%,100%{transform:rotate(45deg) translate(0,0);}
-    50%{transform:rotate(45deg) translate(6px,6px);}
-  }
+.t-about{grid-column:1/6}
+.t-about p{margin:0;text-wrap:pretty}
+.t-about .rest{display:none}
+.t-about.open .rest{display:inline}
+.t-about .toggle{all:unset;cursor:pointer;margin-top:14px;display:inline-block;font-size:13px;font-weight:600;color:var(--link);border-bottom:1px solid transparent}
+.t-about .toggle:hover{border-bottom-color:var(--link)}
+.t-about .toggle:focus-visible{outline:2px solid var(--link);outline-offset:3px}
 
-  /* ============ SECTION SCAFFOLDING ============ */
-  .section{padding:110px 0;}
-  .section.on-black{background:var(--black); color:var(--white);}
-  .section.on-offwhite{background:var(--surface-alt); color:var(--ink);}
-  .section.on-white{background:var(--surface-base); color:var(--ink);}
-  @media (max-width:700px){ .section{padding:70px 0;} }
+.t-skills{grid-column:6/13}
+.skillchips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.skillchips li{margin:0;border:1px solid var(--line);background:var(--chip);border-radius:999px;padding:6px 13px;font-size:13px;color:var(--ink)}
 
-  .section-head{
-    display:flex;
-    align-items:flex-end;
-    gap:22px;
-    margin-bottom:56px;
-    flex-wrap:wrap;
-  }
-  .section-head .idx{
-    font-family:var(--serif-display);
-    font-weight:900;
-    font-size:clamp(2.4rem,6vw,4.2rem);
-    color:var(--red);
-    line-height:0.8;
-  }
-  .section-head h2{
-    font-family:var(--serif-display);
-    font-weight:900;
-    font-size:clamp(2.2rem,6vw,4rem);
-    text-transform:uppercase;
-    letter-spacing:-1px;
-    margin:0;
-    line-height:0.95;
-    position:relative;
-    padding-bottom:14px;
-  }
-  .section-head h2::after{
-    content:'';
-    position:absolute; left:0; bottom:0;
-    width:90px; height:6px; background:var(--red);
-  }
-  .section.on-black .section-head h2::after{background:var(--red);}
-  .section-sub{
-    max-width:640px;
-    color:var(--ink-soft);
-    font-size:1rem;
-    margin:0 0 56px;
-  }
-  .section.on-black .section-sub{color:#b5b5b5;}
+.t-now{grid-column:1/6;display:flex;flex-direction:column}
+.t-now .co{font:italic 16px var(--serif);color:var(--muted);margin:3px 0 12px}
+.t-now p{margin:0;max-width:52ch}
+.more{margin-top:auto;padding-top:14px;font-size:13px;color:var(--link);font-weight:600}
+.live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--link);margin-right:8px;vertical-align:1px}
 
-  /* ============ ABOUT ============ */
-  .about-grid{
-    display:grid;
-    grid-template-columns:1.3fr 1fr;
-    gap:70px;
-    align-items:start;
-  }
-  @media (max-width:860px){ .about-grid{grid-template-columns:1fr; gap:40px;} }
-  .draft-flag{
-    display:inline-block;
-    font-style:italic;
-    font-size:0.78rem;
-    color:#7a5b00;
-    background:#fff3cd;
-    padding:3px 10px;
-    border-radius:2px;
-    margin-bottom:18px;
-    font-weight:600;
-    letter-spacing:.2px;
-  }
-  .about-bio{
-    font-size:1.28rem;
-    line-height:1.65;
-    color:var(--ink);
-    font-weight:500;
-  }
-  .about-bio strong{color:var(--red);}
-  .about-side{
-    border-left:4px solid var(--ink);
-    padding-left:28px;
-  }
-  .about-side h3{
-    font-size:0.75rem;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    margin:0 0 18px;
-    color:var(--red);
-    font-weight:800;
-  }
-  .lang-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;font-size:0.95rem;font-weight:600;}
-  .dots span{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--border-light);margin-left:4px;}
-  .dots span.filled{background:var(--red);}
-  .about-side-block{margin-top:32px;}
+.t-laptop{grid-column:6/10;background:var(--accent);border-color:var(--accent);color:#fff}
+.t-laptop .eyebrow{color:#fff;opacity:.92}
+.t-laptop:hover{border-color:#fff}
+.t-laptop .big{font:500 52px/1 var(--serif);margin-top:12px}
+.t-laptop .big-sub{font-size:14px;margin-top:6px}
+.t-laptop ul{list-style:none;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.35);font-size:13.5px;display:grid;gap:3px}
+.t-laptop li{margin:0}
+:root[data-theme="dark"] .t-laptop{background:#a93226;border-color:#a93226}
 
-  /* ============ EXPERIENCE / TIMELINE ============ */
-  .timeline{position:relative; padding-left:150px;}
-  .timeline-item{position:relative; margin-bottom:64px;}
-  .timeline-item:last-child{margin-bottom:0;}
-  .timeline-marker{
-    position:absolute;
-    left:-150px; top:4px; width:150px;
-    display:flex; align-items:center; justify-content:flex-end; gap:14px;
-    padding-right:9px;
-  }
-  .timeline-dot{
-    position:relative;
-    width:16px; height:16px; border-radius:50%;
-    background:var(--red);
-    box-shadow:0 0 0 4px var(--surface-alt), 0 0 0 6px var(--ink);
-    flex-shrink:0;
-    z-index:1;
-  }
-  .timeline-date{
-    font-size:0.75rem;
-    font-weight:800;
-    letter-spacing:0.5px;
-    text-transform:uppercase;
-    color:var(--ink-soft);
-    white-space:nowrap;
-  }
-  @media (max-width:700px){
-    .timeline{padding-left:34px;}
-    .timeline-marker{left:-34px; width:34px; justify-content:center; padding-right:0;}
-    .timeline-date{display:none;}
-  }
-  .job{margin-bottom:0;}
-  /* .job is a <details> element -- job-head/job-body are always in the DOM
-     (readable/printable with JS off); only the disclosure triangle behavior
-     needs JS-free support, which <details> provides natively. */
-  summary.job-head{
-    display:flex;
-    cursor:pointer;
-    list-style:none;
-  }
-  summary.job-head::-webkit-details-marker{display:none;}
-  summary.job-head::marker{content:'';}
-  .job-head{
-    justify-content:space-between;
-    align-items:flex-end;
-    flex-wrap:wrap;
-    gap:10px;
-    border-bottom:3px solid var(--ink);
-    padding-bottom:16px;
-    margin-bottom:18px;
-  }
-  summary.job-head:hover .job-title{color:var(--red);}
-  .job-head-side{
-    display:flex;
-    align-items:center;
-    gap:16px;
-    flex-shrink:0;
-  }
-  .job-chevron{
-    color:var(--red);
-    font-size:1.6rem;
-    font-weight:900;
-    line-height:1;
-    flex-shrink:0;
-    transition:transform .25s ease;
-  }
-  details[open] > summary .job-chevron{transform:rotate(45deg);}
-  .job-body{
-    animation:job-body-in .25s ease;
-  }
-  @keyframes job-body-in{from{opacity:0;} to{opacity:1;}}
-  .job-title{
-    font-family:var(--serif-display);
-    font-weight:900;
-    font-size:clamp(1.4rem,3vw,2.1rem);
-    text-transform:uppercase;
-    line-height:1.05;
-  }
-  .job-company{
-    color:var(--red);
-    font-weight:800;
-    text-transform:uppercase;
-    font-size:0.9rem;
-    letter-spacing:1px;
-    display:block;
-    margin-top:4px;
-  }
-  .job-dates{
-    color:var(--ink-soft);
-    font-weight:700;
-    font-size:0.9rem;
-    letter-spacing:1px;
-    white-space:nowrap;
-  }
-  .job-core ul{padding-left:22px; margin:0 0 8px;}
-  .job-core li{margin-bottom:6px; font-size:1rem;}
-  .job-core p{margin:0 0 10px; font-size:1.05rem; line-height:1.6; max-width:760px;}
+.t-lang{grid-column:10/13;display:flex;flex-direction:column}
+.langs{list-style:none;display:grid;gap:0;flex:1;grid-auto-rows:1fr}
+.langs li{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0;padding:6px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.langs li:last-child{border-bottom:0}
+.langs .lv{font-size:12.5px;color:var(--muted)}
 
-  .projects-label{
-    font-size:0.75rem;
-    text-transform:uppercase;
-    letter-spacing:2px;
-    color:var(--ink);
-    margin:26px 0 14px;
-    font-weight:800;
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-  .projects-label::after{content:''; flex:1; height:1px; background:var(--border-soft);}
+.t-certs{grid-column:1/13;padding:16px 24px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.t-certs .eyebrow{margin:0}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.chips li{margin:0;border:1px solid var(--line);background:var(--chip);border-radius:999px;padding:5px 12px;font-size:13px;display:flex;gap:8px;align-items:baseline}
+.chip-meta{color:var(--muted);font-size:12px}
 
-  .project{
-    border:2px solid var(--ink);
-    margin-bottom:12px;
-    overflow:hidden;
-    background:var(--card-bg);
-  }
-  .project-toggle{
-    width:100%;
-    background:var(--card-bg);
-    border:none;
-    text-align:left;
-    padding:18px 20px;
-    cursor:pointer;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:1rem;
-    font-weight:800;
-    color:var(--ink);
-    font-family:inherit;
-    gap:14px;
-    transition:background .2s ease, color .2s ease;
-  }
-  .project-toggle:hover{background:var(--ink); color:var(--card-bg);}
-  .project-toggle:hover .sub{color:var(--card-bg); opacity:.75;}
-  .project-toggle .main-line{display:block;}
-  .project-toggle .sub{
-    display:block;
-    font-weight:500;
-    font-size:0.84rem;
-    color:var(--ink-soft);
-    margin-top:4px;
-    transition:color .2s ease;
-  }
-  .project-toggle .chevron{
-    transition:transform .25s ease;
-    color:var(--red);
-    font-size:1.3rem;
-    font-weight:900;
-    flex-shrink:0;
-    line-height:1;
-  }
-  .project.open .chevron{transform:rotate(45deg);}
-  /* Content is visible by default; only collapsed once JS confirms it's
-     running (html.js) -- the accordion must never hide real content behind
-     a toggle that depends on JS actually executing. */
-  .project-body{
-    overflow:hidden;
-    transition:max-height .3s ease;
-    background:var(--surface-alt);
-    border-top:2px solid var(--ink);
-  }
-  html.js .project-body{max-height:0; border-top:0 solid var(--ink);}
-  html.js .project.open .project-body{max-height:1400px; border-top:2px solid var(--ink);}
-  .project-body-inner{padding:22px 24px 26px;}
-  .project-shot{display:block;width:100%;max-width:820px;height:auto;margin:0 0 16px;border:2px solid var(--ink);border-radius:10px;background:#000;}
-  .project-body-inner h4{
-    font-size:0.72rem;
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-    color:var(--red);
-    margin:16px 0 6px;
-    font-weight:800;
-  }
-  .project-body-inner h4:first-child{margin-top:0;}
-  .project-body-inner ul{margin:0 0 4px;padding-left:20px;}
-  .project-body-inner li{font-size:0.94rem;margin-bottom:5px;line-height:1.5;}
-  .placeholder{
-    background:#fff3cd;
-    color:#7a5b00;
-    padding:0 4px;
-    border-radius:2px;
-    font-style:italic;
-    font-weight:600;
-  }
+.t-dash{grid-column:1/6;padding:14px;display:flex;flex-direction:column;gap:12px;background:var(--surface-2)}
+.device{border-radius:14px;background:#0c0c0d;padding:7px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.device img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:8px}
+.cap{display:flex;flex-direction:column;gap:2px;padding:0 6px 4px}
+.cap strong{font-size:14px}
+.cap span{font-size:13px;color:var(--muted)}
 
-  /* Key Initiatives (Experience section only) -- heading-style rows instead
-     of boxed buttons; title reads red while collapsed, black once expanded. */
-  #experience .project{
-    border:none;
-    margin-bottom:0;
-    background:transparent;
-  }
-  #experience .project-toggle{
-    background:transparent;
-    padding:16px 4px;
-    justify-content:flex-start;
-  }
-  #experience .project-toggle:hover{background:transparent;}
-  #experience .project-toggle .main-line{
-    font-family:var(--serif-display);
-    font-weight:800;
-    font-size:1.1rem;
-    color:var(--red);
-    transition:color .2s ease;
-  }
-  #experience .project-toggle:hover .main-line{color:var(--red-dark);}
-  #experience .project.open .project-toggle .main-line{color:var(--ink);}
-  #experience .project-toggle .sub{color:var(--ink-soft);}
-  #experience .project-toggle:hover .sub{color:var(--ink-soft); opacity:1;}
-  #experience .project-body{border-top:none; background:transparent;}
-  #experience .project-body-inner{padding:0 4px 24px;}
-  html.js #experience .project.open .project-body{border-top:none;}
+.t-lab{grid-column:6/10;display:flex;flex-direction:column}
+.t-lab p{margin:0 0 14px}
+.lablist{list-style:none;display:grid;gap:5px;font-size:13.5px;margin-top:4px}
+.lablist li{padding-left:14px;position:relative;margin:0}
+.lablist li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--muted)}
 
-  /* Projects | Home Lab -- same floating, boxless heading-style rows as
-     the Experience section's Key Initiatives. */
-  #projects .project{
-    border:none;
-    margin-bottom:0;
-    background:transparent;
-  }
-  #projects .project-toggle{
-    background:transparent;
-    padding:16px 4px;
-    justify-content:flex-start;
-  }
-  #projects .project-toggle:hover{background:transparent;}
-  #projects .project-toggle .main-line{
-    font-family:var(--serif-display);
-    font-weight:800;
-    font-size:1.1rem;
-    color:var(--red);
-    transition:color .2s ease;
-  }
-  #projects .project-toggle:hover .main-line{color:var(--red-dark);}
-  #projects .project.open .project-toggle .main-line{color:var(--ink);}
-  #projects .project-toggle .sub{color:var(--ink-soft);}
-  #projects .project-toggle:hover .sub{color:var(--ink-soft); opacity:1;}
-  #projects .project-body{border-top:none; background:transparent;}
-  #projects .project-body-inner{padding:0 4px 24px;}
-  html.js #projects .project.open .project-body{border-top:none;}
+.t-contact{grid-column:10/13;display:flex;flex-direction:column;gap:6px}
+.t-contact .lead{margin:0 0 8px;font-size:13.5px;color:var(--muted)}
+.t-contact a{text-decoration:none;font-weight:500;overflow-wrap:anywhere}
+.t-contact a:hover{text-decoration:underline}
 
-  .accordion-controls{
-    display:flex; gap:10px; margin-bottom:40px; flex-wrap:wrap;
-  }
-  .btn-outline{
-    background:none;
-    border:2px solid var(--ink);
-    color:var(--ink);
-    padding:9px 18px;
-    font-size:0.75rem;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    cursor:pointer;
-    font-weight:800;
-    font-family:inherit;
-    transition:background .2s ease, color .2s ease;
-  }
-  .btn-outline:hover{background:var(--ink); color:var(--card-bg);}
-  .section.on-black .btn-outline{border-color:var(--white); color:var(--white);}
-  .section.on-black .btn-outline:hover{background:var(--white); color:var(--black);}
+/* detail */
+.detail{max-width:var(--maxw);margin:0 auto;padding:12px 20px 24px;display:grid;gap:var(--gap)}
+.sec{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);padding:30px 32px;margin:0;min-width:0}
+.sec>*:not(.sec-head):not(.jobs):not(.earlier):not(.labs):not(.certrows):not(.contact-list):not(.sub-h){max-width:68ch}
+.job-core p{max-width:78ch}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:14px}
+.sec-head h2{font:500 28px/1.2 var(--serif)}
+.ctrls{display:flex;gap:6px}
+.btn-ghost{font:inherit;font-size:12.5px;color:var(--muted);background:none;border:1px solid var(--line);border-radius:8px;padding:5px 10px;cursor:pointer}
+.btn-ghost:hover{color:var(--ink);border-color:var(--muted)}
+.hint{color:var(--muted);font-size:13.5px;margin:0 0 18px}
+.sub-h{font:500 20px/1.2 var(--serif);margin:32px 0 12px}
+.lead2{margin:0 0 14px}
 
-  /* earlier roles */
-  .earlier-wrap{margin-top:60px;}
-  .earlier-label{
-    font-size:0.75rem; text-transform:uppercase; letter-spacing:2px;
-    font-weight:800; color:var(--ink-soft); margin-bottom:20px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .earlier-label::after{content:''; flex:1; height:1px; background:var(--border-soft);}
-  .earlier-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:24px 40px; align-items:start;}
-  @media (max-width:700px){ .earlier-grid{grid-template-columns:1fr;} }
-  .simple-job{border-left:3px solid var(--red); padding-left:16px;}
-  .simple-job .job-head{border-bottom:none; padding-bottom:4px; margin-bottom:8px; align-items:center;}
-  .simple-job .job-title{font-size:1.05rem;}
-  .simple-job .job-chevron{font-size:1.2rem;}
-  .simple-job-body{animation:job-body-in .25s ease;}
-  .simple-job ul{padding-left:18px;}
-  .simple-job li{font-size:0.88rem; margin-bottom:4px; color:var(--ink-soft);}
+details.job,details.simple-job{border:1px solid var(--line);border-radius:14px;background:var(--chip);margin-bottom:10px}
+summary.job-head{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding:16px 18px}
+summary.job-head::-webkit-details-marker{display:none}
+.job-title{display:block;font-weight:600;font-size:15.5px;line-height:1.35}
+.job-company{display:block;font:italic 15px var(--serif);color:var(--muted);margin-top:2px}
+.job-head-side{display:flex;align-items:center;gap:10px;flex-shrink:0;color:var(--muted);font-size:13px;white-space:nowrap;padding-top:2px}
+.job-chevron{display:inline-grid;place-items:center;width:20px;height:20px;border:1px solid var(--line);border-radius:50%;font-size:13px;line-height:1;transition:transform .2s}
+details[open]>summary .job-chevron{transform:rotate(45deg)}
+.job-body,.simple-job-body{padding:0 18px 16px}
+.job-core p{margin:0 0 14px}
+.job-core ul,.simple-job-body ul{padding-left:18px;margin:0 0 6px}
+.projects-label{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:6px 0 8px}
+li{margin:3px 0}
 
-  /* ============ PROJECTS (HOME LAB) ============ */
-  .lab-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px;}
-  @media (max-width:800px){ .lab-grid{grid-template-columns:1fr;} }
+.project{border-top:1px solid var(--line)}
+.project:last-child{border-bottom:0}
+.project-toggle{all:unset;box-sizing:border-box;display:flex;gap:12px;align-items:flex-start;width:100%;cursor:pointer;padding:12px 4px}
+.project-toggle:focus-visible{outline:2px solid var(--link);outline-offset:-2px;border-radius:8px}
+.project-toggle .chevron{flex:0 0 18px;height:18px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:12px;line-height:1;color:var(--muted);margin-top:2px;transition:transform .2s}
+.project.open .chevron{transform:rotate(45deg)}
+.main-line{display:block;font-weight:600;font-size:14.5px;line-height:1.4}
+.sub{display:block;font-size:13px;color:var(--muted);margin-top:1px}
+.project-toggle:hover .main-line{color:var(--link)}
+.project-body{display:none}
+.project.open .project-body{display:block}
+.project-body-inner{padding:0 4px 14px 34px;font-size:14.5px;max-width:86ch}
+.project-body-inner h4{font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:12px 0 4px}
+.project-body-inner ul{padding-left:18px}
+.project-shot{width:100%;max-width:640px;height:auto;aspect-ratio:auto;object-fit:contain;border-radius:12px;border:1px solid var(--line);margin:4px 0 8px}
+.labs .project{border:1px solid var(--line);border-radius:14px;background:var(--chip);margin-bottom:10px;padding:0 14px}
+.labs .project .project-toggle{padding:14px 0}
+.labs .project .project-body-inner{padding-left:30px;padding-right:0}
 
-  /* ============ SKILLS ============ */
-  .skills-block{margin-bottom:56px;}
-  .skills-block:last-child{margin-bottom:0;}
-  .skills-block h3{
-    font-family:var(--serif-display);
-    font-size:1.3rem;
-    text-transform:uppercase;
-    letter-spacing:0.5px;
-    margin:0 0 20px;
-    font-weight:900;
-  }
-  .skill-list{
-    list-style:none;
-    margin:0;
-    padding:0;
-  }
-  .skill-list.cols-2{column-count:2; column-gap:16px;}
-  .skill-list li{
-    display:flex;
-    align-items:baseline;
-    gap:9px;
-    font-weight:700;
-    font-size:0.88rem;
-    color:var(--ink);
-    break-inside:avoid-column;
-    margin-bottom:11px;
-    line-height:1.3;
-  }
-  .skill-list .skill-dot{
-    width:7px; height:7px; min-width:7px;
-    border-radius:50%;
-    background:var(--red);
-    transform:translateY(-2px);
-  }
-  .skill-list.accent li{color:var(--red);}
+.earlier .simple-job summary.job-head{padding:14px 18px}
+.simple-job-body{padding-top:0}
+
+.certrows{list-style:none}
+.certrows li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.certrows strong{display:block;font-weight:600}
+.certrows span{color:var(--muted);font-size:13.5px}
+.certrows .cy{white-space:nowrap}
+.contact-list{list-style:none;display:grid;gap:6px}
+.contact-list a{font-weight:500}
+.foot{max-width:var(--maxw);margin:0 auto;padding:0 20px 48px;color:var(--muted);font-size:13px}
+
+/* responsive */
+@media (max-width:980px){
+  .t-name{grid-column:1/13;grid-row:1}
+  .t-photo{grid-column:1/5;grid-row:2;min-height:0;aspect-ratio:1/1}
+  .t-now{grid-column:5/13;grid-row:2}
+  .t-about{grid-column:1/13}
+  .t-skills{grid-column:1/13}
+  .t-laptop{grid-column:1/8}
+  .t-lang{grid-column:8/13}
+  .t-dash{grid-column:1/7}
+  .t-lab{grid-column:7/13}
+  .t-contact{grid-column:1/13}
+  .topbar nav{display:none}
+}
+@media (max-width:640px){
+  .bento{padding:12px 14px 4px;gap:10px}
+  .detail{padding:10px 14px 20px;gap:10px}
+  .tile{padding:18px}
+  .t-name{padding:0}
+  .t-name-main{padding:24px 20px 20px}
+  .t-name h1{font-size:42px}
+  .t-name .role{font-size:18px}
+  .stats{grid-template-columns:1fr 1fr}
+  .stat{padding:14px 18px;border-left:0}
+  .stat:first-child{padding-left:18px}
+  .stat:nth-child(odd){padding-left:20px}
+  .stat:nth-child(even){border-left:1px solid var(--line)}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
+  .t-photo{grid-column:1/13;grid-row:auto;aspect-ratio:4/3}
+  .t-photo img{object-position:50% 25%}
+  .t-now,.t-laptop,.t-lang,.t-dash,.t-lab{grid-column:1/13;grid-row:auto}
+  .chips{display:grid;grid-template-columns:1fr 1fr;width:100%}
+  .chips li{flex-direction:column;gap:0;border-radius:12px;padding:8px 12px}
+  .t-certs{display:block}
+  .t-certs .eyebrow{margin-bottom:10px}
+  .job-head-side .job-dates{display:none}
+  .mark-name{display:none}
+  .topbar-in{padding:0 14px}
+  .job-head-side{white-space:normal}
+  .sec{padding:22px 16px}
+  .sec-head h2{font-size:24px}
+  summary.job-head{padding:14px}
+  .job-body,.simple-job-body{padding:0 14px 14px}
+  .project-body-inner{padding-left:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  html.js .tile.rv,html.js .tile.rv.in,.tile,.btn,.job-chevron,.chevron{transition:none!important;transform:none!important}
+  html.js .tile.rv{opacity:1}
+}
+@media print{
+  .topbar,.ctrls,.theme-btn{display:none}
+  .project-body{display:block!important}
+  html.js .tile.rv{opacity:1;transform:none}
+}
 
 
-  /* ============ CERTIFICATIONS ============ */
-  .cert-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:2px;
-    background:#3a3a3a;
-    border:2px solid #3a3a3a;
-  }
-  .cert{
-    background:var(--black);
-    padding:30px 24px;
-    position:relative;
-  }
-  .cert-index{
-    font-family:var(--serif-display);
-    font-size:2.6rem;
-    font-weight:900;
-    color:#333;
-    line-height:1;
-    margin-bottom:16px;
-  }
-  .cert-name{font-size:1rem;font-weight:900;color:var(--white); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;}
-  .cert-issuer{color:var(--red);font-size:0.85rem;font-weight:700; margin-bottom:6px;}
-  .cert-years{color:#999;font-size:0.8rem; letter-spacing:0.5px;}
+/* ---- finesse pass (user: "not easy on the eyes, a little jarring") ---- */
+:root{--ink:#2a2724;--line:rgba(42,39,36,.08);--gap:16px;--shadow:none;--shadow-h:0 1px 2px rgba(60,50,30,.04),0 6px 18px rgba(60,50,30,.05);--accent:#b04a35}
+:root[data-theme="dark"]{--paper:#161616;--surface:#1d1d1d;--surface-2:#222;--ink:#e6e3de;--muted:#a39e97;--line:rgba(255,255,255,.07);--chip:#232323;--accent-on-dark:#d9796b;--shadow:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#161616;--surface:#1d1d1d;--ink:#e6e3de;--muted:#a39e97;--line:rgba(255,255,255,.07);--accent-on-dark:#d9796b;--shadow:none}}
+.tile{padding:26px}
+.tile:hover{transform:none}
+.t-laptop,:root[data-theme="dark"] .t-laptop{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.t-laptop .eyebrow{color:var(--muted);opacity:1}
+.t-laptop .eyebrow::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--link);margin-right:8px;vertical-align:middle}
+.t-laptop:hover{border-color:var(--line)}
+.t-laptop .big{font:400 40px/1 var(--serif)}
+.t-laptop ul{border-top:1px solid var(--line);color:var(--muted)}
+.big,.stat .n,.num{font-weight:400}
+html.js .tile.rv{transition:opacity .9s ease var(--d,0s),transform .9s ease var(--d,0s),border-color .2s,box-shadow .3s}
+.sec{box-shadow:none}
 
-  /* ============ CONTACT / FOOTER ============ */
-  .contact-section{
-    background:var(--surface-alt);
-    color:var(--ink);
-    padding:110px 0 50px;
-    position:relative;
-    overflow:hidden;
-  }
-  .contact-section .hero-watermark{opacity:1; color:rgba(0,0,0,0.04);}
-  .contact-head{
-    font-family:var(--serif-display);
-    font-weight:900;
-    font-size:clamp(2.6rem,8vw,6rem);
-    text-transform:uppercase;
-    line-height:0.95;
-    letter-spacing:-1px;
-    margin:0 0 20px;
-    position:relative; z-index:1;
-  }
-  .contact-head .dot{color:var(--red);}
-  .contact-lead{
-    max-width:560px;
-    color:var(--ink-soft);
-    font-size:1.1rem;
-    margin-bottom:50px;
-    position:relative; z-index:1;
-  }
-  .contact-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:16px;
-    margin-bottom:70px;
-    position:relative; z-index:1;
-  }
-  .contact-link{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    border:2px solid var(--ink);
-    padding:16px 22px;
-    text-decoration:none;
-    color:var(--ink);
-    font-weight:700;
-    font-size:0.95rem;
-    transition:border-color .2s ease, background .2s ease, color .2s ease;
-  }
-  .contact-link:hover{border-color:var(--red); background:var(--red); color:var(--white);}
-  .contact-link svg{flex-shrink:0;}
-  .footer-bottom{
-    border-top:1px solid var(--border-soft);
-    padding-top:24px;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:14px;
-    font-size:0.75rem;
-    color:var(--ink-soft);
-    position:relative; z-index:1;
-  }
-  .footer-note{
-    max-width:800px;
-  }
+/* ---- finesse pass 2: calm seams, single accent, quieter chips ---- */
+:root{--muted:#5f5a53;--gap:18px}
+:root[data-theme="dark"]{--muted:#aaa49c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--muted:#aaa49c}}
+.tile{padding:30px}
+.tile.t-name,.tile.t-photo{padding:0}
+.topbar .btn-sm{padding:5px 12px;font-weight:500;line-height:1.55}
+.theme-btn{line-height:1.55}
+/* one 12-col scheme: seams at col lines 4 and 8 */
+@media (min-width:981px){
+.t-name{grid-column:1/9}.t-photo{grid-column:9/13}
+.t-about{grid-column:1/5}.t-skills{grid-column:5/13}
+.t-now{grid-column:1/5}.t-laptop{grid-column:5/9}.t-lang{grid-column:9/13}
+.t-dash{grid-column:1/5}.t-lab{grid-column:5/9}.t-contact{grid-column:9/13}
+}
+.t-certs{padding:18px 30px}
+/* photo */
+.t-photo img{filter:saturate(.8) sepia(.08) brightness(.97)}
+:root[data-theme="dark"] .t-photo img{filter:saturate(.75) sepia(.08) brightness(.88)}
+:root[data-theme="dark"] .t-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(22,22,22,.55),transparent 45%)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .t-photo::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(to top,rgba(22,22,22,.55),transparent 45%)}}
+/* accent only on hero download */
+.topbar .btn-sm{background:transparent;color:var(--ink);border:1px solid color-mix(in srgb,var(--ink) 28%,transparent)}
+.topbar .btn-sm:hover{filter:none;background:color-mix(in srgb,var(--ink) 6%,transparent)}
+.t-about .toggle,.more{color:var(--ink);text-decoration:underline;text-underline-offset:3px;border-bottom:0}
+.t-about .toggle:hover{border-bottom-color:transparent;text-decoration-thickness:2px}
+/* chips */
+.skillchips{align-content:flex-start;align-items:flex-start;gap:8px}
+.t-skills{align-content:start}
+.skillchips li,.chips li{border:0;background:color-mix(in srgb,var(--ink) 5%,transparent);font-size:13px;padding:6px 12px}
+/* hero padding + stats */
+.t-name-main{padding:36px 36px 26px}
+.stats{border-top:1px solid var(--line);gap:12px 24px;padding:18px 36px 22px}
+.stat,.stat:first-child{padding:0;border:0}
+@media (max-width:640px){
+  .tile{padding:22px}
+  .tile.t-name,.tile.t-photo{padding:0}
+  .t-name-main{padding:24px}
+  .stats{grid-template-columns:1fr 1fr;align-items:start;padding:16px 24px 20px}
+  .stat,.stat:nth-child(odd),.stat:nth-child(even){padding:0;border:0}
+  .stat:nth-child(n+3){border:0}
+  .num{font-size:24px}
+  .t-about,.t-skills,.t-now,.t-laptop,.t-lang,.t-dash,.t-lab,.t-contact{grid-column:1/13}
+  .chips li{background:color-mix(in srgb,var(--ink) 5%,transparent)}
+}
 
+/* ---- pass 3: more air (user: "claustrophobic, round blocks too crammed"), About is the showcase ---- */
+:root{--gap:24px;--maxw:1240px}
+.bento{padding:28px 32px 12px}
+.detail{padding:28px 32px 40px;gap:28px}
+.tile{padding:34px}
+.tile.t-name,.tile.t-photo{padding:0}
+.t-name-main{padding:44px 44px 32px}
+.stats{padding:22px 44px 26px;gap:16px 32px}
+.eyebrow{margin-bottom:16px}
+@media (min-width:981px){
+  .t-about{grid-column:1/9}.t-skills{grid-column:9/13}
+}
+.t-about .bio{max-width:68ch}
+.t-about .bio p{margin:0 0 16px;font-size:16.5px;line-height:1.75;color:var(--ink);text-wrap:pretty}
+.t-about .bio p:first-child{font-size:18px;line-height:1.65}
+.t-about .bio p:last-child{margin-bottom:0}
+.t-about .bio strong{font-weight:600}
+/* chips: room to breathe */
+.skillchips{gap:10px 8px}
+.skillchips li{padding:8px 14px;line-height:1.35;font-size:13px}
+.chips{gap:10px}
+.chips li{padding:7px 14px;line-height:1.35}
+.t-certs{padding:22px 34px;gap:24px}
+@media (max-width:980px){ .bento{padding:20px 20px 8px} .detail{padding:20px 20px 32px} }
+@media (max-width:640px){
+  :root{--gap:16px}
+  .bento{padding:14px 14px 6px} .detail{padding:16px 14px 28px;gap:18px}
+  .tile{padding:24px} .tile.t-name,.tile.t-photo{padding:0}
+  .t-name-main{padding:26px 24px}
+  .stats{padding:18px 24px 22px}
+  .t-about .bio p{font-size:16px} .t-about .bio p:first-child{font-size:17px}
+}
 
-  /* ============ PRINT ============ */
-  @media print{
-    :root{
-      --ink:#000; --ink-soft:#333; --surface-base:#fff; --surface-alt:#fff;
-      --card-bg:#fff; --border-soft:#ccc; --body-bg:#fff; --body-ink:#000;
-    }
-    .site-nav, .hamburger, .scroll-cta, .hero-watermark, .accordion-controls, .contact-section .hero-watermark,
-    .hero-photo, .hero-actions, .btn-solid, .resume-download{display:none !important;}
-    .hero-grid{display:block !important;}
-    *{animation:none !important; transition:none !important;}
-    body{background:#fff !important; color:#000 !important;}
-    .reveal{opacity:1 !important; transform:none !important;}
-    .timeline{padding-left:34px;}
-    .timeline-marker{left:-34px; width:34px; justify-content:center; padding-right:0;}
-    .timeline-dot{background:#c0392b !important; box-shadow:none !important; border:2px solid #000 !important;}
-    .timeline-date{display:none !important;}
-    .hero .role{color:#000 !important;}
-    .hero .tagline{color:#333 !important;}
-    .ui-hint{display:none !important;}
-    .section, .hero, .contact-section{
-      background:#fff !important;
-      color:#000 !important;
-      padding:24px 0 !important;
-      min-height:0 !important;
-    }
-    .hero{min-height:0 !important; padding:10px 0 !important;}
-    .quick-stats .stat .label, .section-sub{color:#333 !important;}
-    .project-body{max-height:none !important; overflow:visible !important; background:#fff !important;}
-    .project{border-color:#000 !important; page-break-inside:avoid;}
-    .project-toggle{background:#fff !important; color:#000 !important; cursor:default;}
-    .project-toggle:hover{background:#fff !important; color:#000 !important;}
-    .project .chevron{display:none;}
-    .project-toggle .sub{color:#333 !important;}
-    #experience .project-toggle .main-line, #projects .project-toggle .main-line{color:#000 !important;}
-    details.job > *, details.simple-job > *{display:block !important;}
-    summary.job-head{cursor:default;}
-    .job-chevron{display:none;}
-    .cert-grid{background:#fff !important; border-color:#000 !important;}
-    .cert{background:#fff !important; border:1px solid #000 !important;}
-    .cert-name, .cert-years{color:#000 !important;}
-    .cert-index{color:#ccc !important;}
-    .contact-link{color:#000 !important; border-color:#000 !important;}
-    .contact-link:hover{background:#fff !important;}
-    .skill-list li{color:#000 !important;}
-    .job-title, .section-head h2, .contact-head, .hero h1{color:#000 !important;}
-    .job-company, .skill-list.accent li, .cert-issuer, .project-body-inner h4{color:var(--red) !important;}
-    a{text-decoration:underline;}
-  }
+/* pass 3b: expertise as a quiet list (no crowded pills), wider gutters */
+:root{--gap:28px}
+.t-about .bio{max-width:76ch}
+.skillchips{display:block;margin:0;padding:0}
+.skillchips li{display:block;background:none!important;border:0;border-radius:0;padding:10px 0;font-size:14px;line-height:1.4;color:var(--ink);border-top:1px solid var(--line)}
+.skillchips li:first-child{border-top:0;padding-top:2px}
+@media (max-width:640px){ :root{--gap:16px} }
+
+/* pass 3c: balance About vs Expertise heights */
+.skillchips li{padding:8px 0}
+.t-about .bio p{font-size:17px;line-height:1.78;margin-bottom:20px}
+.t-about .bio p:first-child{font-size:19.5px;line-height:1.6}
+@media (max-width:640px){ .t-about .bio p{font-size:16px} .t-about .bio p:first-child{font-size:17.5px} }
+
+/* ---- site: language switch + phone menu ---- */
+.lang-switch{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:5px 8px;border-radius:8px}
+.lang-switch:hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 6%,transparent)}
+.menu-btn{display:none;width:36px;height:32px;border:1px solid var(--line);border-radius:8px;background:none;cursor:pointer;position:relative}
+.menu-btn span{position:absolute;left:10px;right:10px;height:1.5px;background:var(--ink);border-radius:2px;transition:transform .25s ease,top .25s ease}
+.menu-btn span:first-child{top:12px}.menu-btn span:last-child{top:18px}
+.topbar.open .menu-btn span:first-child{top:15px;transform:rotate(45deg)}
+.topbar.open .menu-btn span:last-child{top:15px;transform:rotate(-45deg)}
+@media (max-width:980px){
+  .menu-btn{display:inline-block}
+  .topbar nav{display:none;position:absolute;left:0;right:0;top:100%;flex-direction:column;gap:2px;margin:0;padding:8px 4px 14px;
+    background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 32px rgba(0,0,0,.18)}
+  .topbar.open nav{display:flex}
+  .topbar nav a{font-size:16px;padding:12px 10px}
+}
+@media (max-width:420px){ .top-actions{gap:6px} .theme-btn{padding:5px 8px} }
+/* palette: softbrick (palette.json) */
+:root{--accent:#b04a35;--accent-on-dark:#d9796b}:root[data-theme="dark"]{--accent-on-dark:#d9796b}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--accent-on-dark:#d9796b}}
 </style>
 </head>
 <body>
-<script>
-  // confirm JS is actually running before we let CSS hide anything for the
-  // scroll-reveal effect -- if this line never executes, content stays visible.
-  document.documentElement.classList.remove('no-js');
-  document.documentElement.classList.add('js');
-</script>
 
-<nav class="site-nav" id="siteNav">
-  <div class="nav-inner">
-    <a href="#home" class="nav-mark"><span class="sq">JG</span> JOSEPH GAD</a>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#home" data-nav="home">Home</a></li>
-      <li><a href="#about" data-nav="about">About</a></li>
-      <li><a href="#experience" data-nav="experience">Experience</a></li>
-      <li><a href="#certifications" data-nav="certifications">Certifications</a></li>
-      <li><a href="#projects" data-nav="projects">Projects</a></li>
-      <li><a href="#contact" data-nav="contact">Contact</a></li>
-      <li><a href="index_fr.html" class="lang-switch">FR</a></li>
+<header class="topbar">
+  <div class="topbar-in">
+    <a href="#top" class="mark"><span class="sq">JG</span><span class="mark-name">Joseph Gad</span></a>
+    <nav aria-label="Sections" id="siteNav">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#lab">Home Lab</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="top-actions">
+      <a class="lang-switch" href="index_fr.html" lang="fr" hreflang="fr" aria-label="Version française">FR</a>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark theme">Dark</button>
+      <a class="btn btn-sm" href="Joseph_Gad_Resume.pdf" download>Resume</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<section class="bento" aria-label="Overview">
+
+  <article class="tile t-name rv">
+    <div class="t-name-main">
+      <div class="eyebrow">Portfolio / IT &amp; Systems</div>
+      <h1>Joseph Gad</h1>
+      <p class="role">IT Operations, Systems &amp; Applications Lead</p>
+      <p class="tagline">I build identity, security, and infrastructure systems that scale with a company — not against it. Currently running IT operations for MaintainX and handling the IT operations transition through the Autodesk acquisition, including a 950+ employee laptop transition.</p>
+      <div class="actions">
+        <a class="btn resume-download" href="Joseph_Gad_Resume.pdf" download>Download Resume (PDF)</a>
+        <a class="link-quiet" href="Joseph_Gad_Resumes.zip" download>ATS versions &amp; French (ZIP)</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">14+</div><div class="lbl">Years in IT</div></div>
+      <div class="stat"><div class="num">8+</div><div class="lbl">Years Leading Teams</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">Certifications</div></div>
+      <div class="stat"><div class="num">4</div><div class="lbl">Languages Spoken</div></div>
+    </div>
+  </article>
+
+  <article class="tile t-photo rv">
+    <img src="profile.png" alt="Joseph Gad" width="800" height="800">
+  </article>
+
+  <article class="tile t-about rv" id="about">
+    <div class="eyebrow">About</div>
+    <div class="bio">
+      <p>I'm an <strong>IT Operations, Systems &amp; Applications Lead</strong> with 14+ years of hands-on experience — starting with hardware repair at Microbytes and Apple, and working my way up through help desk and systems administration to leading IT operations, identity, security, and infrastructure for fast-scaling companies in Canada and the US.</p>
+      <p>At MaintainX I joined as roughly the 350th employee and grew with the company toward 900+, leading identity infrastructure, device lifecycle management, and AI/SaaS governance, and building the IT department's structure from scratch. Since Autodesk's acquisition of MaintainX, I handle the IT operations transition while still running IT operations for MaintainX — software consolidation, onboarding/offboarding alignment, and a company-wide 950+ employee laptop transition.</p>
+      <p>I care about building IT systems that scale with a company, not against it: automating the repetitive, securing the essentials, and giving teams tools that get out of their way. I work across English, French, Armenian, and Arabic, which helps with distributed teams. Outside of work, I run an extensive home lab (virtualization, networking, self-hosted AI) because I like understanding infrastructure from the ground up.</p>
+    </div>
+  </article>
+
+  <article class="tile t-skills rv">
+    <div class="eyebrow">Technical Expertise</div>
+    <ul class="skillchips"><li>Google Workspace Administration</li><li>Okta / SSO &amp; SCIM Provisioning</li><li>Cisco Meraki</li><li>Ubiquiti UniFi</li><li>Fortinet</li><li>MDM Administration (JAMF / Kandji / Intune / NinjaOne)</li><li>Scripting (Python / Bash / PowerShell)</li><li>macOS Packaging (pkgbuild / AutoPkg)</li><li>Endpoint Security &amp; EDR (CrowdStrike / Sophos)</li><li>IT Operations</li><li>ITIL / IT Service Management</li><li>AI/SaaS Governance</li><li>Documentation</li></ul>
+  </article>
+
+  <!-- 4 now -->
+  <a class="tile t-now rv" href="#exp-autodesk" data-open="exp-autodesk">
+    <div class="eyebrow"><span class="live-dot" aria-hidden="true"></span>Now · Aug 2026 – Present</div>
+    <h2>Principal Enterprise Systems &amp; Applications Analyst</h2>
+    <div class="co">Autodesk</div>
+    <p>Following Autodesk's acquisition of MaintainX, I lead the IT department, handle the IT operations transition while still running IT operations for MaintainX, and maintain MaintainX's operating standards while we integrate with Autodesk.</p>
+    <span class="more">See role &amp; initiatives →</span>
+  </a>
+
+  
+  <!-- 5 laptop transition (accent) -->
+  <a class="tile t-laptop rv" href="#exp-autodesk" data-open="exp-autodesk">
+    <div class="eyebrow">Key Initiative</div>
+    <h2>Company-Wide Laptop Transition</h2>
+    <div class="big">950+</div>
+    <div class="big-sub">employees onto Autodesk-issued laptops</div>
+    <ul>
+      <li>~900 devices swapped to date</li>
+      <li>About 60% of replaced devices returned for wipe and cleaning</li>
     </ul>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+  </a>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="home">
-  <div class="hero-watermark">JG</div>
-  <div class="container hero-inner">
-    <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="hero-eyebrow">Portfolio / IT &amp; Systems</div>
-        <h1>JOSEPH<br>G<span class="last">A</span>D</h1>
-        <div class="role">IT Systems &amp; Applications Lead</div>
-        <p class="tagline">I build identity, security, and infrastructure systems that scale with a company — not against it. Currently leading IT operations and a 950+ employee laptop transition through the Autodesk acquisition.</p>
+  
+  <article class="tile t-lang rv">
+    <div class="eyebrow">Languages</div>
+    <ul class="langs"><li><span>English</span><span class="lv">Fluent</span></li><li><span>French</span><span class="lv">Advanced</span></li><li><span>Armenian</span><span class="lv">Fluent</span></li><li><span>Arabic</span><span class="lv">Conversational</span></li></ul>
+  </article>
 
-        <div class="quick-stats reveal">
-          <div class="stat"><div class="num">14+</div><div class="label">Years in IT</div></div>
-          <div class="stat"><div class="num">8+</div><div class="label">Years Leading Teams</div></div>
-          <div class="stat"><div class="num">6</div><div class="label">Certifications</div></div>
-          <div class="stat"><div class="num">4</div><div class="label">Languages Spoken</div></div>
-        </div>
+  <!-- 6 certs -->
+  <a class="tile t-certs rv" href="#certifications">
+    <div class="eyebrow">Certifications</div>
+    <ul class="chips"><li><span class="chip-name">Okta Certified Admin</span><span class="chip-meta">Since 2022</span></li><li><span class="chip-name">Microsoft Certified Admin</span><span class="chip-meta">Since 2017</span></li><li><span class="chip-name">Google Workspace Admin</span><span class="chip-meta">Since 2019</span></li><li><span class="chip-name">Kandji/Iru Certified Admin</span><span class="chip-meta">Since 2024</span></li><li><span class="chip-name">JAMF Certified Admin</span><span class="chip-meta">Since 2020</span></li><li><span class="chip-name">Apple Certified Technician</span><span class="chip-meta">Since 2015</span></li></ul>
+  </a>
 
-        <div class="hero-actions reveal delay-1">
-          <a class="btn-solid resume-download" href="Joseph_Gad_Resume.pdf" download>Download Resume (PDF)</a>
-          <span class="btn-caption"><a href="Joseph_Gad_Resumes.zip" download>ATS versions &amp; French (ZIP)</a></span>
-        </div>
-      </div>
+  
+  <!-- 7 homedash -->
+  <a class="tile t-dash rv" href="#lab">
+    <div class="device"><img src="homedash.jpg" alt="HomeDash on iPad Pro: lights by room on the left, weather and top news on the right" width="1640" height="1230"></div>
+    <div class="cap"><strong>HomeDash</strong><span>Native SwiftUI smart-home dashboard for iPad Pro</span></div>
+  </a>
 
-      <div class="hero-photo reveal delay-2">
-        <div class="avatar-placeholder">
-          <img class="avatar-photo" src="profile.png" alt="Joseph Gad">
-        </div>
-      </div>
-    </div>
-  </div>
-  <a href="#about" class="scroll-cta"><span>Scroll</span><span class="arrow"></span></a>
+  
+  <!-- 8 home lab -->
+  <a class="tile t-lab rv" href="#lab">
+    <div class="eyebrow">Home Lab</div>
+    <p>I run an extensive home lab (virtualization, networking, self-hosted AI) because I like understanding infrastructure from the ground up.</p>
+    <ul class="lablist"><li>Virtualization Servers</li><li>Storage &amp; Backup</li><li>Home Network</li><li>AI Agent Setup (Hermes)</li><li>HomeDash</li><li>Media, Theater &amp; Gaming</li></ul>
+  </a>
+
+  
+  <!-- 9 contact -->
+  <article class="tile t-contact rv" id="bento-contact">
+    <div class="eyebrow">Get in touch</div>
+    <p class="lead">Open to conversations about IT leadership, systems architecture, and infrastructure strategy.</p>
+    <a href="tel:5144657309">514.465.7309</a>
+    <a href="mailto:Joeygad19@gmail.com">Joeygad19@gmail.com</a>
+    <a href="https://linkedin.com/in/joeygad" target="_blank" rel="noopener">linkedin.com/in/joeygad</a>
+  </article>
+
+
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="section on-white" id="about">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="idx">01</span>
-      <h2>About Me</h2>
-    </div>
-    <div class="about-grid">
-      <div class="reveal">
-        <p class="about-bio">I'm an <strong>IT Systems &amp; Applications Lead</strong> with 14+ years of hands-on experience — starting with hardware repair at Microbytes and Apple, and working my way up through help desk and systems administration to leading identity, security, and infrastructure for fast-scaling companies in Canada and the US. At MaintainX I joined as roughly the 350th employee and grew with the company toward 900+, leading identity infrastructure, device lifecycle management, and AI/SaaS governance, and building the IT department's structure from scratch. Since Autodesk's acquisition of MaintainX, I lead IT operations through the integration — software consolidation, onboarding/offboarding alignment, and a company-wide 950+ employee laptop transition. I care about building IT systems that scale with a company, not against it: automating the repetitive, securing the essentials, and giving teams tools that get out of their way. I work across English, French, Armenian, and Arabic, which helps with distributed teams. Outside of work, I run an extensive home lab (virtualization, networking, self-hosted AI) because I like understanding infrastructure from the ground up.</p>
-      </div>
-      <div class="about-side reveal delay-1">
-        <h3>Languages</h3>
-        <div class="lang-row"><span>English</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></div></div>
-        <div class="lang-row"><span>French</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></div></div>
-        <div class="lang-row"><span>Armenian</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></div></div>
-        <div class="lang-row"><span>Arabic</span><div class="dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></div></div>
+<div class="detail">
 
-        <div class="about-side-block">
-          <h3>Technical Expertise</h3>
-          <ul class="skill-list">
-            <li><span class="skill-dot"></span>Google Workspace Administration</li>
-            <li><span class="skill-dot"></span>Okta / SSO &amp; SCIM Provisioning</li>
-            <li><span class="skill-dot"></span>Cisco Meraki</li>
-            <li><span class="skill-dot"></span>Ubiquiti UniFi</li>
-            <li><span class="skill-dot"></span>Fortinet</li>
-            <li><span class="skill-dot"></span>MDM Administration (JAMF / Kandji / Intune / NinjaOne)</li>
-            <li><span class="skill-dot"></span>Scripting (Python / Bash / PowerShell)</li>
-            <li><span class="skill-dot"></span>macOS Packaging (pkgbuild / AutoPkg)</li>
-            <li><span class="skill-dot"></span>Endpoint Security &amp; EDR (CrowdStrike / Sophos)</li>
-            <li><span class="skill-dot"></span>ITIL / IT Service Management</li>
-            <li><span class="skill-dot"></span>AI/SaaS Governance</li>
-            <li><span class="skill-dot"></span>Documentation</li>
-          </ul>
-        </div>
-
-        <div class="about-side-block">
-          <h3>Leadership &amp; Soft Skills</h3>
-          <ul class="skill-list accent">
-            <li><span class="skill-dot"></span>Team Building &amp; Mentoring</li>
-            <li><span class="skill-dot"></span>Cross-Functional Partnership</li>
-            <li><span class="skill-dot"></span>Vendor Evaluation &amp; POCs</li>
-          </ul>
-        </div>
-
-        <div class="about-side-block">
-          <h3>Hobbies &amp; Interests</h3>
-          <ul class="skill-list cols-2">
-            <li><span class="skill-dot"></span>Boxing</li>
-            <li><span class="skill-dot"></span>Mixed martial arts</li>
-            <li><span class="skill-dot"></span>Auto mechanics &amp; racing</li>
-            <li><span class="skill-dot"></span>Photography</li>
-            <li><span class="skill-dot"></span>Film</li>
-            <li><span class="skill-dot"></span>Video editing</li>
-            <li><span class="skill-dot"></span>Music</li>
-            <li><span class="skill-dot"></span>3D printing</li>
-          </ul>
-        </div>
-      </div>
-    </div>
+<section class="sec" id="experience">
+  <div class="sec-head"><h2>Experience</h2>
+    <div class="ctrls"><button type="button" class="btn-ghost" id="expAll">Expand all</button><button type="button" class="btn-ghost" id="collAll">Collapse all</button></div>
   </div>
-</section>
-
-<!-- ============ EXPERIENCE ============ -->
-<section class="section on-offwhite" id="experience">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="idx">02</span>
-      <h2>Experience</h2>
-    </div>
-    <p class="section-sub reveal"><span class="ui-hint">Click a role to reveal its Key Initiatives, then click any initiative for its full context, actions, and impact. </span></p>
-
-    <div class="accordion-controls reveal">
-      <button class="btn-outline" onclick="toggleAll(true)">Expand All Projects</button>
-      <button class="btn-outline" onclick="toggleAll(false)">Collapse All</button>
-    </div>
-
-    <div class="timeline">
-    <!-- AUTODESK -->
-    <div class="timeline-item reveal">
-      <div class="timeline-marker">
-        <span class="timeline-date">Aug 2026 – Present</span>
-        <span class="timeline-dot"></span>
-      </div>
-      <details class="job" open>
+  <p class="hint">Open a role for its Key Initiatives, then any initiative for context, actions, and impact.</p>
+  <div class="jobs">
+<details class="job" id="exp-autodesk" open>
       <summary class="job-head">
         <div>
           <span class="job-title">Principal Enterprise Systems &amp; Applications Analyst</span>
@@ -1014,13 +536,13 @@
       </summary>
       <div class="job-body">
       <div class="job-core">
-        <p>Following Autodesk's acquisition of MaintainX, I lead the IT department and maintain MaintainX's operating standards while we integrate with Autodesk: a company-wide laptop transition, software consolidation including identity integration, and alignment of IT processes with HR and Finance.</p>
+        <p>Following Autodesk's acquisition of MaintainX, I lead the IT department, handle the IT operations transition while still running IT operations for MaintainX, and maintain MaintainX's operating standards while we integrate with Autodesk: a company-wide laptop transition, software consolidation including identity integration, and alignment of IT processes with HR and Finance.</p>
       </div>
 
       <div class="projects-label">Key Initiatives — click to expand</div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Company-Wide Laptop Transition</span><span class="sub">950+ employees onto Autodesk-issued laptops</span></span>
         </button>
@@ -1038,7 +560,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Software Consolidation &amp; Identity Architecture</span><span class="sub">Planning, strategy, and identity integration design</span></span>
         </button>
@@ -1056,7 +578,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">IT Operations Alignment</span><span class="sub">Hardware, access, and termination processes aligned to Autodesk standards</span></span>
         </button>
@@ -1076,15 +598,7 @@
 
       </div>
       </details>
-    </div>
-
-    <!-- MAINTAINX -->
-    <div class="timeline-item reveal">
-      <div class="timeline-marker">
-        <span class="timeline-date">Mar 2024 – Aug 2026</span>
-        <span class="timeline-dot"></span>
-      </div>
-      <details class="job" open>
+<details class="job" id="exp-maintainx" open>
       <summary class="job-head">
         <div>
           <span class="job-title">Information Technology Team Lead</span>
@@ -1097,13 +611,13 @@
       </summary>
       <div class="job-body">
       <div class="job-core">
-        <p>Joined MaintainX as roughly its 350th employee and grew with the company toward 900+ employees. Led identity and security infrastructure, global device lifecycle management, AI/SaaS governance, and the department's organizational buildout from the ground up, while staying hands-on with day-to-day technical work. Here's what that looked like:</p>
+        <p>Joined MaintainX as roughly its 350th employee and grew with the company toward 900+ employees. Owned IT operations and led identity and security infrastructure, global device lifecycle management, AI/SaaS governance, and the department's organizational buildout from the ground up, while staying hands-on with day-to-day technical work. Here's what that looked like:</p>
       </div>
 
       <div class="projects-label">Key Initiatives — click to expand</div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">OKTA &amp; Google Workspace SSO Rollout</span><span class="sub">Company-wide IDP implementation</span></span>
         </button>
@@ -1124,7 +638,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">EDR Migration: SentinelOne → CrowdStrike</span><span class="sub">Fleet-wide endpoint detection &amp; response cutover</span></span>
         </button>
@@ -1143,7 +657,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Cross-Platform MDM Consolidation</span><span class="sub">Miradore → NinjaOne, alongside Kandji/Iru for Apple</span></span>
         </button>
@@ -1163,7 +677,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Apple Device Standardization Initiative</span><span class="sub">Benchmarked proposal to move the fleet off Windows</span></span>
         </button>
@@ -1182,7 +696,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">AI &amp; SaaS Rollout Governance</span><span class="sub">ChatGPT → Anthropic's Claude AI suite</span></span>
         </button>
@@ -1202,7 +716,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Global Device Lifecycle &amp; Procurement Platform (Growrk)</span><span class="sub">Procurement, shipping, MDM enrollment &amp; asset lifecycle</span></span>
         </button>
@@ -1223,7 +737,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Built the IT Department's Organizational Structure From Scratch</span><span class="sub">Roles, responsibilities &amp; career growth paths</span></span>
         </button>
@@ -1243,7 +757,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">IT Manager Who Still Stays Technical</span><span class="sub">Leadership growth without leaving the technical work behind</span></span>
         </button>
@@ -1262,7 +776,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Cross-Functional IT Partnership</span><span class="sub">HR, RevOps, Engineering, Sales, Finance &amp; Product</span></span>
         </button>
@@ -1283,7 +797,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Infrastructure Strategy &amp; Evaluation</span><span class="sub">Serval (ITSM) &amp; Fortinet network stack POCs</span></span>
         </button>
@@ -1301,7 +815,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Built Internal IT Tooling on MaintainX's Own Product</span><span class="sub">Cost-saving alternative to a third-party ITSM/asset platform</span></span>
         </button>
@@ -1319,15 +833,7 @@
       </div>
       </div>
       </details>
-    </div>
-
-    <!-- LEAP -->
-    <div class="timeline-item reveal">
-      <div class="timeline-marker">
-        <span class="timeline-date">2018 – 2024</span>
-        <span class="timeline-dot"></span>
-      </div>
-      <details class="job">
+<details class="job" id="exp-leap">
       <summary class="job-head">
         <div>
           <span class="job-title">IT Team Lead / Systems Administrator</span>
@@ -1341,14 +847,14 @@
       <div class="job-body">
       <div class="job-core">
         <ul>
-          <li>Developed IT policies to align with ITIL standards; network administration across Cisco's Meraki suite (firewall/switches/WAPs)</li>
+          <li>Owned IT operations; developed IT policies to align with ITIL standards; network administration across Cisco's Meraki suite (firewall/switches/WAPs)</li>
         </ul>
       </div>
 
       <div class="projects-label">Key Initiatives — click to expand</div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Google Workspace Directory Consolidation</span><span class="sub">Merged 8 cloud directory environments</span></span>
         </button>
@@ -1367,7 +873,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Help Desk Rebuild — Atlassian Jira Service Management</span><span class="sub">Replaced legacy ticketing system</span></span>
         </button>
@@ -1386,7 +892,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">IT Lead for Company Rebranding</span><span class="sub">Enterprise-wide identity and systems cutover</span></span>
         </button>
@@ -1402,7 +908,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Onsite Activation Support — UFC International Fight Week</span><span class="sub">Live event technology deployment</span></span>
         </button>
@@ -1420,7 +926,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Sophos Endpoint Security Administration</span><span class="sub">Custom detection rules &amp; policy tuning</span></span>
         </button>
@@ -1439,7 +945,7 @@
       </div>
 
       <div class="project">
-        <button class="project-toggle" onclick="toggleProject(this)">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">MDM &amp; Endpoint Security Foundation (JAMF)</span><span class="sub">Established Apple fleet management</span></span>
         </button>
@@ -1459,14 +965,10 @@
 
       </div>
       </details>
-    </div>
-    </div>
-
-    <!-- EARLIER ROLES -->
-    <div class="earlier-wrap reveal">
-      <div class="earlier-label">Earlier Career</div>
-      <div class="earlier-grid">
-        <details class="simple-job" open>
+  </div>
+  <h3 class="sub-h">Earlier Career</h3>
+  <div class="earlier">
+<details class="simple-job" open>
           <summary class="job-head">
             <div><span class="job-title">IT Desktop Technician</span><span class="job-company">Yellow Pages</span></div>
             <div class="job-head-side">
@@ -1481,8 +983,7 @@
           </ul>
           </div>
         </details>
-
-        <details class="simple-job" open>
+<details class="simple-job" open>
           <summary class="job-head">
             <div><span class="job-title">Senior IT Help Desk Technician</span><span class="job-company">CGI</span></div>
             <div class="job-head-side">
@@ -1497,8 +998,7 @@
           </ul>
           </div>
         </details>
-
-        <details class="simple-job" open>
+<details class="simple-job" open>
           <summary class="job-head">
             <div><span class="job-title">Genius</span><span class="job-company">Apple</span></div>
             <div class="job-head-side">
@@ -1514,8 +1014,7 @@
           </ul>
           </div>
         </details>
-
-        <details class="simple-job" open>
+<details class="simple-job" open>
           <summary class="job-head">
             <div><span class="job-title">Computer Repair Technician</span><span class="job-company">Microbytes</span></div>
             <div class="job-head-side">
@@ -1530,71 +1029,21 @@
           </ul>
           </div>
         </details>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- ============ CERTIFICATIONS ============ -->
-<section class="section on-black" id="certifications">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="idx">03</span>
-      <h2>Certifications</h2>
-    </div>
-    <div class="cert-grid reveal">
-      <div class="cert">
-        <div class="cert-index">01</div>
-        <div class="cert-name">Okta Certified Admin</div>
-        <div class="cert-issuer">Okta Certified Administrator</div>
-        <div class="cert-years">Valid through 2026</div>
-      </div>
-      <div class="cert">
-        <div class="cert-index">02</div>
-        <div class="cert-name">Microsoft Certified Admin</div>
-        <div class="cert-issuer">Microsoft Certified Administrator</div>
-        <div class="cert-years">Since 2017</div>
-      </div>
-      <div class="cert">
-        <div class="cert-index">03</div>
-        <div class="cert-name">Google Workspace Admin</div>
-        <div class="cert-issuer">Google Certified Administrator</div>
-        <div class="cert-years">Since 2019</div>
-      </div>
-      <div class="cert">
-        <div class="cert-index">04</div>
-        <div class="cert-name">Kandji/Iru Certified Admin</div>
-        <div class="cert-issuer">KANDJI Certified Administrator</div>
-        <div class="cert-years">Valid through 2026</div>
-      </div>
-      <div class="cert">
-        <div class="cert-index">05</div>
-        <div class="cert-name">JAMF Certified Admin</div>
-        <div class="cert-issuer">JAMF SUITE Administrator</div>
-        <div class="cert-years">Since 2020</div>
-      </div>
-      <div class="cert">
-        <div class="cert-index">06</div>
-        <div class="cert-name">Apple Certified Technician</div>
-        <div class="cert-issuer">Apple Certified Technician</div>
-        <div class="cert-years">Since 2015</div>
-      </div>
-    </div>
-  </div>
+<section class="sec" id="certifications">
+  <div class="sec-head"><h2>Certifications</h2></div>
+  <ul class="certrows"><li><div><strong>Okta Certified Admin</strong><span>Okta Certified Administrator</span></div><span class="cy">Since 2022</span></li><li><div><strong>Microsoft Certified Admin</strong><span>Microsoft Certified Administrator</span></div><span class="cy">Since 2017</span></li><li><div><strong>Google Workspace Admin</strong><span>Google Certified Administrator</span></div><span class="cy">Since 2019</span></li><li><div><strong>Kandji/Iru Certified Admin</strong><span>KANDJI Certified Administrator</span></div><span class="cy">Since 2024</span></li><li><div><strong>JAMF Certified Admin</strong><span>JAMF SUITE Administrator</span></div><span class="cy">Since 2020</span></li><li><div><strong>Apple Certified Technician</strong><span>Apple Certified Technician</span></div><span class="cy">Since 2015</span></li></ul>
 </section>
 
-<!-- ============ PROJECTS / HOME LAB ============ -->
-<section class="section on-offwhite" id="projects">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="idx">04</span>
-      <h2>Projects | Home Lab</h2>
-    </div>
-    <p class="section-sub ui-hint reveal">Click any card to expand it.</p>
+<section class="sec" id="lab">
+  <div class="sec-head"><h2>Projects | Home Lab</h2></div>
+  <p class="hint">Click any row to expand it.</p>
+  <div class="labs">
 
-    <div class="lab-grid">
-      <div class="project reveal">
-        <button class="project-toggle" onclick="toggleProject(this)">
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Virtualization Servers</span><span class="sub">Three Proxmox nodes</span></span>
         </button>
@@ -1606,8 +1055,8 @@
         </div></div>
       </div>
 
-      <div class="project reveal delay-1">
-        <button class="project-toggle" onclick="toggleProject(this)">
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Storage &amp; Backup</span><span class="sub">TrueNAS SCALE</span></span>
         </button>
@@ -1620,8 +1069,8 @@
         </div></div>
       </div>
 
-      <div class="project reveal">
-        <button class="project-toggle" onclick="toggleProject(this)">
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Home Network</span><span class="sub">pfSense firewall</span></span>
         </button>
@@ -1636,8 +1085,8 @@
         </div></div>
       </div>
 
-      <div class="project reveal delay-1">
-        <button class="project-toggle" onclick="toggleProject(this)">
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">AI Agent Setup (Hermes)</span><span class="sub">Local-first personal agent with persistent skills and memory</span></span>
         </button>
@@ -1652,8 +1101,8 @@
         </div></div>
       </div>
 
-      <div class="project reveal">
-        <button class="project-toggle" onclick="toggleProject(this)">
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">HomeDash</span><span class="sub">Native SwiftUI smart-home dashboard for iPad Pro</span></span>
         </button>
@@ -1667,8 +1116,8 @@
         </div></div>
       </div>
 
-      <div class="project reveal delay-1">
-        <button class="project-toggle" onclick="toggleProject(this)">
+      <div class="project">
+        <button class="project-toggle" onclick="toggleProject(this)" aria-expanded="false">
           <span class="chevron">+</span>
           <span><span class="main-line">Media, Theater &amp; Gaming</span><span class="sub">Plex, projector, and Windows gaming VM</span></span>
         </button>
@@ -1680,149 +1129,93 @@
           </ul>
         </div></div>
       </div>
-    </div>
+    
   </div>
 </section>
 
-<!-- ============ CONTACT / FOOTER ============ -->
-<section class="contact-section" id="contact">
-  <div class="hero-watermark">JG</div>
-  <div class="container">
-    <div class="reveal">
-      <div class="hero-eyebrow">Get in touch</div>
-      <h2 class="contact-head">LET'S BUILD<br>SOMETHING<span class="dot">.</span></h2>
-      <p class="contact-lead">Open to conversations about IT leadership, systems architecture, and infrastructure strategy.</p>
-    </div>
-
-    <div class="contact-links reveal delay-1">
-      <a class="contact-link" href="tel:5144657309">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        514.465.7309
-      </a>
-      <a class="contact-link" href="mailto:Joeygad19@gmail.com">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
-        Joeygad19@gmail.com
-      </a>
-      <a class="contact-link" href="https://linkedin.com/in/joeygad" target="_blank" rel="noopener">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        linkedin.com/in/joeygad
-      </a>
-      <a class="contact-link resume-download" href="Joseph_Gad_Resume.pdf" download>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg>
-        Download Resume (PDF)
-      </a>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="footer-note"><span class="ui-hint">Click a role in Experience to reveal its Key Initiatives, or any Key Initiatives / Home Lab row to expand it further — everything expands automatically when printing or exporting to PDF.</span></div>
-      <div>&copy; 2026 Joseph Gad</div>
-    </div>
-  </div>
+<section class="sec" id="contact">
+  <div class="sec-head"><h2>Contact</h2></div>
+  <p class="lead2">Open to conversations about IT leadership, systems architecture, and infrastructure strategy.</p>
+  <ul class="contact-list">
+    <li><a href="tel:5144657309">514.465.7309</a></li>
+    <li><a href="mailto:Joeygad19@gmail.com">Joeygad19@gmail.com</a></li>
+    <li><a href="https://linkedin.com/in/joeygad" target="_blank" rel="noopener">linkedin.com/in/joeygad</a></li>
+    <li><a href="Joseph_Gad_Resume.pdf" download>Download Resume (PDF)</a></li>
+    <li><a href="Joseph_Gad_Resumes.zip" download>ATS versions &amp; French (ZIP)</a></li>
+  </ul>
 </section>
+
+</div>
+</main>
+
+<footer class="foot">&copy; 2026 Joseph Gad</footer>
 
 <script>
-  // ---- accordion ----
-  function toggleProject(btn){
-    var proj = btn.parentElement;
-    var isOpen = proj.classList.toggle('open');
-    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  }
-  function toggleAll(open){
-    document.querySelectorAll('.job, .simple-job').forEach(function(d){ d.open = open; });
-    document.querySelectorAll('.project').forEach(function(p){
-      p.classList.toggle('open', open);
-      var t = p.querySelector('.project-toggle');
-      if(t) t.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-  }
-
-  // ---- mobile hamburger ----
-  var nav = document.getElementById('siteNav');
-  var hamburgerBtn = document.getElementById('hamburgerBtn');
-  var navLinks = document.getElementById('navLinks');
-  hamburgerBtn.addEventListener('click', function(){
-    var isOpen = nav.classList.toggle('open');
-    hamburgerBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+(function(){
+  var root=document.documentElement;
+  var btn=document.getElementById('themeBtn');
+  var mq=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+  function cur(){ var t=root.getAttribute('data-theme'); return (t==='dark'||t==='light')?t:(mq&&mq.matches?'dark':'light'); }
+  function label(){ if(btn){ var dk=cur()==='dark'; btn.textContent = dk ? 'Light' : 'Dark'; btn.setAttribute('aria-pressed',dk?'true':'false'); } }
+  if(mq&&mq.addEventListener) mq.addEventListener('change',label);
+  label();
+  if(btn) btn.addEventListener('click',function(){
+    var n = cur()==='dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme',n);
+    try{localStorage.setItem('jg-theme',n);}catch(e){}
+    label();
   });
-  navLinks.querySelectorAll('a').forEach(function(a){
-    a.addEventListener('click', function(){
-      nav.classList.remove('open');
-      hamburgerBtn.setAttribute('aria-expanded', 'false');
+  window.toggleProject=function(b){
+    var p=b.closest('.project'); var o=p.classList.toggle('open');
+    b.setAttribute('aria-expanded',o?'true':'false');
+  };
+  function setAll(open){
+    document.querySelectorAll('#experience .project').forEach(function(p){
+      p.classList.toggle('open',open);
+      var t=p.querySelector('.project-toggle'); if(t) t.setAttribute('aria-expanded',open?'true':'false');
     });
-  });
-
-  // ---- scroll-spy via IntersectionObserver ----
-  var sectionIds = ['home','about','experience','certifications','projects','contact'];
-  var navMap = {};
-  navLinks.querySelectorAll('a[data-nav]').forEach(function(a){
-    navMap[a.getAttribute('data-nav')] = a;
-  });
-  var spyObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){
-        var id = entry.target.id;
-        Object.keys(navMap).forEach(function(key){
-          navMap[key].classList.toggle('active', key === id);
-        });
-      }
-    });
-  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
-  sectionIds.forEach(function(id){
-    var el = document.getElementById(id);
-    if(el) spyObserver.observe(el);
-  });
-
-  // ---- reduced motion check (governs reveal + parallax) ----
-  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // ---- scroll reveal ----
-  if(prefersReducedMotion){
-    document.querySelectorAll('.reveal').forEach(function(el){
-      el.classList.add('in-view');
-    });
-  } else {
-    var revealObserver = new IntersectionObserver(function(entries, obs){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('in-view');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(function(el){
-      revealObserver.observe(el);
-    });
-    // safety net: force everything visible after a short delay no matter what,
-    // in case the observer never fires in some embedding/preview context.
-    setTimeout(function(){
-      document.querySelectorAll('.reveal:not(.in-view)').forEach(function(el){
-        el.classList.add('in-view');
-      });
-    }, 1500);
+    document.querySelectorAll('#experience details.job').forEach(function(d){ if(open) d.open=true; });
   }
+  var e=document.getElementById('expAll'), c=document.getElementById('collAll');
+  if(e) e.addEventListener('click',function(){setAll(true);});
+  if(c) c.addEventListener('click',function(){setAll(false);});
+  // Bento tile links that target a closed section: open it first
+  document.querySelectorAll('a[data-open]').forEach(function(a){
+    a.addEventListener('click',function(){
+      var d=document.getElementById(a.getAttribute('data-open')); if(d&&d.tagName==='DETAILS') d.open=true;
+    });
+  });
+  // active nav
+  var links=[].slice.call(document.querySelectorAll('.topbar nav a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(x){ if(x.isIntersecting){ var i=secs.indexOf(x.target); links.forEach(function(l,j){l.classList.toggle('on',j===i);}); } });
+    },{rootMargin:'-40% 0px -55% 0px'});
+    secs.forEach(function(s){ if(s) io.observe(s); });
+    var tiles=[].slice.call(document.querySelectorAll('.tile.rv'));
+    var vis=0;
+    var rv=new IntersectionObserver(function(es){ es.forEach(function(x){ if(x.isIntersecting){ x.target.style.setProperty('--d',(Math.min(vis++,8)*0.06)+'s'); x.target.classList.add('in'); rv.unobserve(x.target); } }); vis=0; },{threshold:.05});
+    tiles.forEach(function(t){ rv.observe(t); });
+  } else { document.querySelectorAll('.tile').forEach(function(t){t.classList.add('in');}); }
+  setTimeout(function(){document.querySelectorAll('.tile.rv').forEach(function(t){if(t.getBoundingClientRect().top<innerHeight)t.classList.add('in');});},1500);
+  var ab=document.getElementById('aboutBtn');
+  if(ab) ab.addEventListener('click',function(){
+    var t=ab.closest('.t-about'); var o=t.classList.toggle('open');
+    ab.setAttribute('aria-expanded',o?'true':'false'); ab.textContent=o?'Show less':'Read more';
+  });
+  window.addEventListener('beforeprint',function(){ setAll(true); document.querySelectorAll('details').forEach(function(d){d.open=true;}); });
 
-  // ---- background parallax on the JG watermark(s) ----
-  if(!prefersReducedMotion){
-    var watermarks = document.querySelectorAll('.hero-watermark');
-    var parallaxTicking = false;
-    function updateWatermarkParallax(){
-      var y = window.pageYOffset || document.documentElement.scrollTop;
-      var offset = y * 0.05; // small magnitude, not distracting
-      watermarks.forEach(function(el){
-        el.style.transform = 'translateY(calc(-50% + ' + offset + 'px))';
-      });
-      parallaxTicking = false;
-    }
-    window.addEventListener('scroll', function(){
-      if(!parallaxTicking){
-        window.requestAnimationFrame(updateWatermarkParallax);
-        parallaxTicking = true;
-      }
-    }, { passive: true });
-    updateWatermarkParallax();
+  // phone menu
+  var mb=document.getElementById('menuBtn'), tb=document.querySelector('.topbar');
+  if(mb&&tb){
+    var setMenu=function(o){tb.classList.toggle('open',o);mb.setAttribute('aria-expanded',o?'true':'false');mb.setAttribute('aria-label',o?mb.dataset.close||'Close menu':mb.dataset.open||'Open menu');};
+    mb.addEventListener('click',function(){setMenu(!tb.classList.contains('open'));});
+    document.querySelectorAll('#siteNav a').forEach(function(a){a.addEventListener('click',function(){setMenu(false);});});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&tb.classList.contains('open')){setMenu(false);mb.focus();}});
   }
+})();
 
 </script>
-
 </body>
 </html>
